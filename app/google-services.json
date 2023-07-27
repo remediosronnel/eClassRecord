@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "572279664372",
+    "project_id": "eclassrecord-f21be",
+    "storage_bucket": "eclassrecord-f21be.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:572279664372:android:393e9afb5d4d17e428f8a1",
+        "android_client_info": {
+          "package_name": "com.remedios.adminapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "572279664372-s26j3ku715djv6ft3lpi2qigpk3usc9h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAEgh3tCsG7lkGs66B5Gewr1Xa2reAjsu4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "572279664372-s26j3ku715djv6ft3lpi2qigpk3usc9h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:572279664372:android:281930f7f91e9e9c28f8a1",
+        "android_client_info": {
+          "package_name": "com.remedios.eclassrecordteacher"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "572279664372-s26j3ku715djv6ft3lpi2qigpk3usc9h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAEgh3tCsG7lkGs66B5Gewr1Xa2reAjsu4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "572279664372-s26j3ku715djv6ft3lpi2qigpk3usc9h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
