@@ -48,11 +48,8 @@ class MainActivity : AppCompatActivity() {
             val email = binding.eMailBox.text.toString()
             val subject = "Inquiry"
             val message = binding.messageBox.text.toString()
-
             val javaMailAPI = JavaMailAPI(this, null, email, subject, message)
-
             javaMailAPI.execute()
-
 
 
             binding.messageLayout.apply {
