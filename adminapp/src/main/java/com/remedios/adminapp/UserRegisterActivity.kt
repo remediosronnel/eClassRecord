@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.WindowCompat
 import com.google.firebase.auth.FirebaseAuth
 import com.remedios.adminapp.databinding.ActivityUserRegisterBinding
 
@@ -14,6 +15,7 @@ class UserRegisterActivity: AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        WindowCompat.setDecorFitsSystemWindows(window, false)
         binding = ActivityUserRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
