@@ -16,7 +16,7 @@
       android:textSize="30sp"
       android:layout_marginTop="45dp"
       android:textStyle="bold|normal|italic"
-      android:textColor="@color/white"
+      android:textColor="@color/black"
       android:layout_width="match_parent"
       android:layout_height="wrap_content" />
 
@@ -146,7 +146,7 @@
 
       <Button
           android:id="@+id/btn_msgsend"
-          android:text="SEND"
+          android:text="@string/send"
           android:textSize="17sp"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"/>
@@ -210,7 +210,7 @@
       </com.google.android.material.textfield.TextInputLayout>
       <TextView
           android:textSize="11sp"
-          android:text="Forget Password"
+          android:text="Click Message Me to get your email &amp; password"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"/>
     </LinearLayout>

@@ -10,5 +10,6 @@
     <color name="textColor">#ECE5EC</color>
     <color name="pinkColor">#FF0035</color>
     <color name="transparentColor">#00FFFFFF</color>
-
+    <color name="lime">#A4C400</color>
+    <color name="violet">#AA00FF</color>
 </resources>
