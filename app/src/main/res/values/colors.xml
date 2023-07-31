@@ -12,4 +12,6 @@
     <color name="transparentColor">#00FFFFFF</color>
     <color name="lime">#A4C400</color>
     <color name="violet">#AA00FF</color>
+    <color name="blue">#0050EF</color>
+    <color name="steel">#647687</color>
 </resources>

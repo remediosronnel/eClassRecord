@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/img_background_1"
+    >
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="261dp"
+        android:orientation="vertical"
+        android:paddingTop="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@color/blue"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="37dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@color/white"
+                android:clipToOutline="true"
+                android:paddingTop="10dp"
+                android:text="ADD CLASS"
+                android:textAlignment="center"
+                android:textSize="30sp"
+                android:textStyle="normal|bold"
+                tools:layout_editor_absoluteX="9dp"
+                tools:layout_editor_absoluteY="16dp" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginRight="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:text="New Class Name: "
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/class_name"
+                    android:layout_width="221dp"
+                    android:layout_height="50dp"
+                    android:background="@color/white"
+                    android:layout_marginLeft="5dp"
+                    android:hint="Enter Class Name" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="100dp"
+                android:layout_marginRight="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="25dp"
+                    android:text="Class Teacher: "
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/class_teacher"
+                    android:layout_width="221dp"
+                    android:layout_height="50dp"
+                    android:background="@color/white"
+                    android:layout_marginLeft="5dp"
+                    android:hint="Enter Class Teacher" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="175dp"
+                android:layout_marginRight="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="60dp"
+                    android:text="Start Date: "
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/class_start_date"
+                    android:layout_width="221dp"
+                    android:layout_height="50dp"
+                    android:background="@color/white"
+                    android:layout_marginLeft="5dp"
+                    android:hint="MM-DD-YY" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="250dp"
+                android:layout_marginRight="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="65dp"
+                    android:text="End Date: "
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/class_end_date"
+                    android:layout_width="221dp"
+                    android:layout_height="50dp"
+                    android:background="@color/white"
+                    android:layout_marginLeft="5dp"
+                    android:hint="MM-DD-YY" />
+
+            </LinearLayout>
+
+
+        </FrameLayout>
+
+        <Button
+            android:id="@+id/btn_save"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/switch_background"
+            android:text="SAVE" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

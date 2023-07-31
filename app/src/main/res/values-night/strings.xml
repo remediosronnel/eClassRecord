@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="send">SEND</string>
+    <string name="add_new_examination">ADD NEW EXAMINATION</string>
 </resources>
