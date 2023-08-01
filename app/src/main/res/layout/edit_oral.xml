@@ -88,7 +88,6 @@
 
         <FrameLayout
             android:id="@+id/frame_present"
-            android:layout_marginLeft="50dp"
             android:layout_width="wrap_content"
             android:layout_height="75dp"
             android:visibility="gone"
@@ -113,7 +112,6 @@
         <FrameLayout
             android:id="@+id/frame_absent"
             android:layout_width="wrap_content"
-            android:layout_marginLeft="50dp"
             android:layout_height="75dp"
             android:visibility="gone"
             >
@@ -136,7 +134,6 @@
         </FrameLayout>
         <FrameLayout
             android:id="@+id/frame_excuse"
-            android:layout_marginLeft="50dp"
             android:layout_width="wrap_content"
             android:layout_height="75dp"
             android:visibility="visible"
@@ -159,7 +156,21 @@
 
         </FrameLayout>
 
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="75dp"
+                android:layout_gravity="center"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="00"
+                android:textSize="35dp"
+                android:textStyle="bold|normal" />
+
+
+        </FrameLayout>
     </LinearLayout>
 
     <androidx.constraintlayout.widget.Guideline
@@ -167,7 +178,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="106dp" />
+        app:layout_constraintGuide_begin="89dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
