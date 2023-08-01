@@ -161,6 +161,7 @@
             android:layout_height="wrap_content">
 
             <TextView
+                android:id="@+id/oral_score"
                 android:layout_width="60dp"
                 android:layout_height="75dp"
                 android:layout_gravity="center"
