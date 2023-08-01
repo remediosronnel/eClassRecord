@@ -37,7 +37,7 @@
                 android:background="@color/white"
                 android:clipToOutline="true"
                 android:paddingTop="10dp"
-                android:text="@string/add_new_examination"
+                android:text="ADD ORAL RECITATION"
                 android:textAlignment="center"
                 android:textSize="30sp"
                 android:textStyle="normal|bold"
@@ -90,11 +90,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="25dp"
                     android:layout_marginStart="5dp"
-                    android:text="New Exam Name: "
+                    android:text="New Oral Name: "
                     android:textSize="20sp" />
 
                 <EditText
-                    android:id="@+id/exam_name"
+                    android:id="@+id/oral_name"
                     android:layout_width="221dp"
                     android:layout_height="50dp"
                     android:background="@color/white"
@@ -124,7 +124,7 @@
                     android:layout_height="50dp"
                     android:background="@color/white"
                     android:layout_marginLeft="5dp"
-                     />
+                    />
 
             </LinearLayout>
 
@@ -140,11 +140,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="25dp"
                     android:layout_marginLeft="65dp"
-                    android:text="Exam Date: "
+                    android:text="Oral Date: "
                     android:textSize="20sp" />
 
                 <EditText
-                    android:id="@+id/date_exam"
+                    android:id="@+id/date_oral"
                     android:layout_width="221dp"
                     android:layout_height="50dp"
                     android:background="@color/white"

@@ -3,4 +3,6 @@
 
     <string name="send">SEND</string>
     <string name="add_new_examination">ADD NEW EXAMINATION</string>
+    <string name="class_name">Class Name:</string>
+    <string name="math_grade_4">Math Grade 4</string>
 </resources>
