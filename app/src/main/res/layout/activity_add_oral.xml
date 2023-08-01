@@ -34,6 +34,7 @@
                 android:layout_gravity="center"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
+                android:fontFamily="@font/font_caprasimo_cegular"
                 android:background="@color/white"
                 android:clipToOutline="true"
                 android:paddingTop="10dp"

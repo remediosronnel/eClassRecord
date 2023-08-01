@@ -38,6 +38,7 @@
                 android:clipToOutline="true"
                 android:paddingTop="10dp"
                 android:text="ADD CLASS"
+                android:fontFamily="@font/font_caprasimo_cegular"
                 android:textAlignment="center"
                 android:textSize="30sp"
                 android:textStyle="normal|bold"

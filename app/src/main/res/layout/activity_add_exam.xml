@@ -23,18 +23,19 @@
 
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="150dp"
             android:background="@color/blue"
             tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="37dp">
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="100dp"
                 android:layout_gravity="center"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:background="@color/white"
+                android:fontFamily="@font/font_caprasimo_cegular"
                 android:clipToOutline="true"
                 android:paddingTop="10dp"
                 android:text="@string/add_new_examination"

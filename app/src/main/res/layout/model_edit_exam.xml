@@ -87,8 +87,11 @@
         </LinearLayout>
 
         <FrameLayout
+            android:id="@+id/frame_present"
             android:layout_width="wrap_content"
-            android:layout_height="75dp">
+            android:layout_height="75dp"
+            android:visibility="gone"
+            >
 
             <ImageView
                 android:layout_width="50dp"
@@ -104,6 +107,52 @@
                 android:layout_gravity="bottom|center_horizontal|center_vertical"
                 android:gravity="bottom"
                 android:text="Present" />
+
+        </FrameLayout>
+        <FrameLayout
+            android:id="@+id/frame_absent"
+            android:layout_width="wrap_content"
+            android:layout_height="75dp"
+            android:visibility="gone"
+            >
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginBottom="1dp"
+                android:background="@color/white"
+                android:src="@drawable/ic_absent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|center_horizontal|center_vertical"
+                android:gravity="bottom"
+                android:text="Absent" />
+
+        </FrameLayout>
+        <FrameLayout
+            android:id="@+id/frame_excuse"
+            android:layout_width="wrap_content"
+            android:layout_height="75dp"
+            android:visibility="visible"
+            >
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginBottom="1dp"
+                android:background="@color/lime"
+                android:src="@drawable/ic_excuse" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|center_horizontal|center_vertical"
+                android:gravity="bottom"
+                android:text="Excuse" />
 
         </FrameLayout>
 
