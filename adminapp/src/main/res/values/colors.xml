@@ -3,4 +3,5 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="lime">#A4C400</color>
+    <color name="teal">#00ABA9</color>
 </resources>

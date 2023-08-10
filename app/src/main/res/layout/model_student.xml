@@ -10,6 +10,9 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:paddingTop="10dp"
+        android:layout_marginLeft="3dp"
+        android:layout_marginRight="3dp"
+        android:background="@drawable/img_background_2"
         app:layout_constraintBottom_toTopOf="@+id/guideline"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,7 +25,7 @@
             android:layout_marginLeft="2dp"
             android:layout_marginTop="30dp"
             android:scaleType="fitCenter"
-            android:src="@drawable/img_student" />
+            android:src="@drawable/ic_profile" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -37,7 +40,7 @@
                 android:layout_marginBottom="5dp"
                 android:textStyle="normal|bold"
                 android:text="Student Name"
-                android:textColor="@color/blue"
+                android:textColor="@color/black"
                 android:textSize="25sp" />
 
             <LinearLayout
@@ -50,38 +53,40 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="LRN:"
-                    android:textColor="@color/blue" />
+                    android:textColor="@color/black" />
 
                 <TextView
                     android:id="@+id/tv_studentLRN"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_marginLeft="3dp"
                     android:text="10154875468"
-                    android:textColor="@color/blue" />
+                    android:textColor="@color/black" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:text="Gender: "
-                    android:textColor="@color/blue" />
+                    android:textColor="@color/black" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="3dp"
                     android:text="Male"
-                    android:textColor="@color/blue" />
+                    android:textColor="@color/black" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/blue"
+                    android:textColor="@color/black"
                     android:layout_marginLeft="10dp"
                     android:text="SN:"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/blue"
+                    android:textColor="@color/black"
                     android:layout_marginLeft="5dp"
                     android:text="1"/>
 

@@ -9,6 +9,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="5dp"
         android:orientation="horizontal"
+        android:background="@drawable/img_background_2"
         app:layout_constraintBottom_toTopOf="@+id/guideline3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,6 +26,7 @@
             <TextView
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
+                android:textColor="@color/black"
                 android:text="EXAM NAME"
                 android:textSize="30sp" />
 
@@ -37,6 +39,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/black"
                     android:text="Date: " />
 
                 <TextView
@@ -44,19 +47,22 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="5dp"
+                    android:textColor="@color/black"
                     android:text="MM-DD-YYYY" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
-                    android:text="No. Items" />
+                    android:textColor="@color/black"
+                    android:text="No. Items: " />
 
                 <TextView
                     android:id="@+id/no_items"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
+                    android:textColor="@color/black"
                     android:text="50" />
 
 
@@ -86,6 +92,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom|center"
                 android:gravity="bottom"
+                android:textColor="@color/black"
                 android:text="Edit" />
 
         </FrameLayout>
@@ -112,6 +119,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom|center"
                 android:gravity="bottom"
+                android:textColor="@color/black"
                 android:text="Delete" />
 
         </FrameLayout>

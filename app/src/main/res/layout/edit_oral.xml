@@ -12,6 +12,7 @@
         app:layout_constraintBottom_toTopOf="@+id/guideline4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        android:background="@drawable/img_background_2"
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
@@ -29,6 +30,7 @@
                 android:id="@+id/student_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/black"
                 android:text="Student Name"
                 android:textSize="20sp" />
 
@@ -41,6 +43,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/black"
                     android:text="Stud ID: " />
 
                 <TextView
@@ -48,12 +51,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
+                    android:textColor="@color/black"
                     android:text="1" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
+                    android:textColor="@color/black"
                     android:text="LRN: " />
 
                 <TextView
@@ -61,6 +66,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
+                    android:textColor="@color/black"
                     android:text="000000000000" />
 
             </LinearLayout>
@@ -74,11 +80,13 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/black"
                     android:text="Gender: " />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/black"
                     android:text="Male" />
 
 
@@ -152,6 +160,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom|center_horizontal|center_vertical"
                 android:gravity="bottom"
+                android:textColor="@color/black"
                 android:text="Excuse" />
 
         </FrameLayout>
@@ -165,6 +174,7 @@
                 android:layout_width="60dp"
                 android:layout_height="75dp"
                 android:layout_gravity="center"
+                android:textColor="@color/black"
                 android:gravity="center_horizontal|center_vertical"
                 android:text="00"
                 android:textSize="35dp"
