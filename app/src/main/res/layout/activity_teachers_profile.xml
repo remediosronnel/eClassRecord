@@ -3,14 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".TeachersProfile"
+    >
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="113dp"
+        android:layout_marginBottom="50dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/button_save"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -38,7 +41,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="517dp"
             android:orientation="vertical">
 
             <TextView
@@ -61,6 +64,7 @@
                         android:layout_width="175dp"
                         android:layout_height="175dp"
                         android:layout_marginLeft="20dp"
+                        android:clickable="true"
                         android:layout_marginTop="5dp"
                         android:layout_marginBottom="5dp"
                         android:src="@drawable/ic_logo"
@@ -85,6 +89,7 @@
                         android:id="@+id/profile_pic"
                         android:layout_width="175dp"
                         android:layout_height="175dp"
+                        android:clickable="true"
                         android:layout_marginLeft="20dp"
                         android:layout_marginTop="5dp"
                         android:src="@drawable/ic_profile" />
@@ -104,12 +109,16 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
                 android:layout_marginTop="25dp"
+
                 android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+
+
                     android:text="Your Name: "
                     android:textSize="20sp" />
 
@@ -125,6 +134,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
                 android:layout_marginTop="25dp"
                 android:orientation="horizontal">
 
@@ -145,6 +155,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
                 android:layout_marginTop="25dp"
                 android:orientation="horizontal">
 
@@ -165,6 +176,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
                 android:layout_marginTop="25dp"
                 android:orientation="horizontal">
 
@@ -188,4 +200,16 @@
 
     </LinearLayout>
 
+    <Button
+        android:id="@+id/button_save"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="105dp"
+        android:layout_marginEnd="106dp"
+        android:layout_marginBottom="25dp"
+        android:text="Save"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 </androidx.constraintlayout.widget.ConstraintLayout>
