@@ -34,7 +34,8 @@
             android:name=".TeachersProfile"
             android:exported="false" />
         <activity android:name="com.theartofdev.edmodo.cropper.CropImageActivity"/>
-
+        <activity android:name=".NewActivity"
+            android:exported="false"/>
         <activity
             android:name=".MainActivity"
             android:exported="true"

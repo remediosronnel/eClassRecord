@@ -4,8 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:padding="20dp"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="176dp"
     android:orientation="vertical"
+    android:background="@color/steel"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark"
+    tools:context=".HomeActivity"
     >
 
     <de.hdodenhof.circleimageview.CircleImageView
@@ -21,7 +24,7 @@
         android:layout_height="wrap_content"
         android:text="User Name"
         android:textSize="30sp"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         />
 
 

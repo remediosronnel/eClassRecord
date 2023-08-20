@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="50dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/button_save"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -42,6 +42,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="517dp"
+            android:layout_marginLeft="10dp"
             android:orientation="vertical">
 
             <TextView
@@ -186,13 +187,13 @@
                     android:text="Division Name: "
                     android:textSize="20sp" />
 
-                <EditText
-                    android:id="@+id/division_name"
-                    android:layout_width="230dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp" />
-
             </LinearLayout>
+
+            <EditText
+                android:id="@+id/division_name"
+                android:layout_width="230dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp" />
 
 
         </LinearLayout>

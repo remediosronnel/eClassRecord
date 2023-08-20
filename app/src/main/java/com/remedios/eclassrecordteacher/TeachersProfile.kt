@@ -5,6 +5,8 @@ import android.app.Activity
 import android.content.ContentValues
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
@@ -23,7 +25,8 @@ import com.theartofdev.edmodo.cropper.CropImageView
 
 class TeachersProfile : AppCompatActivity(){
 
-private lateinit var binding: ActivityTeachersProfileBinding
+private lateinit var binding : ActivityTeachersProfileBinding
+
     private val CAMERA_REQUEST_CODE = 100
     private val STORAGE_REQUEST_CODE = 101
     private val IMAGE_PICK_CAMERA_CODE = 102
@@ -33,12 +36,14 @@ private lateinit var binding: ActivityTeachersProfileBinding
     private lateinit var storagePermission:Array<String>
 
     private var imageUri:Uri? = null
+    private var imageUri1:Uri? = null
+
     private var name:String? = ""
     private var schoolName:String? = ""
     private var districtName:String? = ""
     private var divisionName:String? = ""
     private var actionBar: ActionBar? = null
-    lateinit var dbHelper: MyDbHelper
+    private lateinit var dbHelper: MyDbHelper
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -46,15 +51,15 @@ private lateinit var binding: ActivityTeachersProfileBinding
         binding = ActivityTeachersProfileBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val schoolLogo = findViewById<ImageView>(R.id.school_logo)
-        val profilePic = findViewById<ImageView>(R.id.profile_pic)
-        val saveButton = findViewById<Button>(R.id.profile_save)
+        var schoolLogo = findViewById<ImageView>(R.id.school_logo)
+        var profilePic = findViewById<ImageView>(R.id.profile_pic)
+        var saveButton = findViewById<Button>(R.id.profile_save)
 
-        actionBar = supportActionBar
-        actionBar!!.title = "Profile"
-
-        actionBar!!.setDisplayHomeAsUpEnabled(true)
-        actionBar!!.setDisplayShowHomeEnabled(true)
+//        actionBar = supportActionBar
+        supportActionBar?.title = "Profile"
+//
+//        actionBar!!.setDisplayHomeAsUpEnabled(true)
+//        actionBar!!.setDisplayShowHomeEnabled(true)
 
         dbHelper = MyDbHelper(this)
 
@@ -64,27 +69,37 @@ private lateinit var binding: ActivityTeachersProfileBinding
         )
         storagePermission = arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE)
 
-        profilePic.setOnClickListener{
-            imagePickDialog()
+        if (profilePic.isInTouchMode){
+            profilePic.setOnClickListener{
+                imagePickDialog()
+
+            }
+
+        }else if(schoolLogo.isInTouchMode){
+            schoolLogo.setOnClickListener{
+                imagePickDialog()
+
+            }
         }
-        schoolLogo.setOnClickListener{
-            imagePickDialog()
-        }
+
+
         saveButton.setOnClickListener {
             inputData()
+
         }
 
 
     }
     private fun inputData(){
-        name = "" + binding.teacherName.text.toString().trim()
-        schoolName = "" + binding.schoolName.text.toString().trim()
-        districtName = "" + binding.districtName.text.toString().trim()
-        divisionName = "" + binding.divisionName.text.toString().trim()
+        name = binding.teacherName.text.toString().trim()
+        schoolName = binding.schoolName.text.toString().trim()
+        districtName = binding.districtName.text.toString().trim()
+        divisionName = binding.divisionName.text.toString().trim()
 
         val timestamp = System.currentTimeMillis()
         val id = dbHelper.insertRecord(
             "" + name,
+            "" + imageUri,
             "" + imageUri,
             "" + schoolName,
             "" + districtName,
@@ -93,6 +108,11 @@ private lateinit var binding: ActivityTeachersProfileBinding
             "" + timestamp
         )
         Toast.makeText(this, "Record Added against ID $id", Toast.LENGTH_SHORT).show()
+
+
+
+        val intent = Intent(this, HomeActivity::class.java)
+        startActivity(intent)
     }
 
     private fun imagePickDialog(){
@@ -107,6 +127,7 @@ private lateinit var binding: ActivityTeachersProfileBinding
                     requestCameraPermission()
                 }else{
                     pickFromCamera()
+
                 }
             }else{
                 if (!checkStoragePermission()){
@@ -122,16 +143,20 @@ private lateinit var binding: ActivityTeachersProfileBinding
 
     private fun pickFromCamera(){
         val values = ContentValues()
+
         values.put(MediaStore.Images.Media.TITLE, "Image Title")
         values.put(MediaStore.Images.Media.DESCRIPTION, "Image Description")
 
         imageUri = contentResolver.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values)
+        imageUri1 = contentResolver.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values)
+
 
         val cameraIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
         cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri)
         startActivityForResult(
             cameraIntent, IMAGE_PICK_CAMERA_CODE
         )
+
 
     }
     private fun pickFromGallery(){
@@ -217,6 +242,7 @@ private lateinit var binding: ActivityTeachersProfileBinding
                     .setGuidelines(CropImageView.Guidelines.ON)
                     .setAspectRatio(1, 1)
                     .start(this)
+
             }else if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE){
                 val result = CropImage.getActivityResult(data)
                 if (resultCode == Activity.RESULT_OK){

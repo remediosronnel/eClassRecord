@@ -23,6 +23,7 @@ class MyDbHelper(context: Context?) : SQLiteOpenHelper(
     fun insertRecord(
         name:String?,
         image:String?,
+        image1: String?,
         schoolName:String?,
         districtName:String?,
         divisionName:String?,
@@ -35,6 +36,7 @@ class MyDbHelper(context: Context?) : SQLiteOpenHelper(
 
         values.put(Constants.C_NAME, name)
         values.put(Constants.C_IMAGE, image)
+        values.put(Constants.C_IMAGE1, image1)
         values.put(Constants.C_SCHOOLNAME, schoolName)
         values.put(Constants.C_DISTRICTNAME, districtName)
         values.put(Constants.C_DIVISIONNAME, divisionName)
