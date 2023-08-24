@@ -12,14 +12,14 @@
     >
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/id_picture"
+        android:id="@+id/nav_picture"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:src="@drawable/ic_profile"
         />
 
     <TextView
-        android:id="@+id/users_name"
+        android:id="@+id/nav_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="User Name"
