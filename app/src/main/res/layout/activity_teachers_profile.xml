@@ -41,8 +41,8 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="517dp"
-            android:layout_marginLeft="10dp"
+            android:layout_height="548dp"
+            android:layout_marginLeft="30dp"
             android:orientation="vertical">
 
             <TextView
@@ -65,9 +65,9 @@
                         android:layout_width="175dp"
                         android:layout_height="175dp"
                         android:layout_marginLeft="20dp"
-                        android:clickable="true"
                         android:layout_marginTop="5dp"
                         android:layout_marginBottom="5dp"
+                        android:clickable="true"
                         android:src="@drawable/ic_logo"
 
                         />
@@ -90,9 +90,9 @@
                         android:id="@+id/profile_pic"
                         android:layout_width="175dp"
                         android:layout_height="175dp"
-                        android:clickable="true"
                         android:layout_marginLeft="20dp"
                         android:layout_marginTop="5dp"
+                        android:clickable="true"
                         android:src="@drawable/ic_profile" />
 
                     <TextView
@@ -176,7 +176,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="46dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="25dp"
                 android:orientation="horizontal">
@@ -187,13 +187,13 @@
                     android:text="Division Name: "
                     android:textSize="20sp" />
 
-            </LinearLayout>
+                <EditText
+                    android:id="@+id/division_name"
+                    android:layout_width="230dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp" />
 
-            <EditText
-                android:id="@+id/division_name"
-                android:layout_width="230dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp" />
+            </LinearLayout>
 
 
         </LinearLayout>

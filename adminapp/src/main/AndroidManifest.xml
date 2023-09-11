@@ -11,10 +11,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EClassRecordTeacher">
         <activity
-            android:name=".ListUsersActivity"
+            android:name=".UserRegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".UserRegisterActivity"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,7 +23,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".ListUsersActivity"
             android:exported="false"></activity>
     </application>
 
