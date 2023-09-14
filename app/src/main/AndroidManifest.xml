@@ -3,17 +3,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.remedios.eclassrecordteacher">
 
-    <uses-feature
-        android:name="android.hardware.camera"
-        android:required="false" />
-
-    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
         android:maxSdkVersion="32" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
-        android:maxSdkVersion="32"
-        tools:ignore="ScopedStorage" />
-    <uses-permission android:name="android.permission.CAMERA"/>
+        android:maxSdkVersion="32" />
+
+    <uses-feature
+        android:name="android.hardware.camera2"
+        android:required="true"
+        />
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
 
     <application
         android:allowBackup="true"
@@ -33,7 +35,7 @@
         <activity
             android:name=".MainActivity"
             android:exported="false" />
-        <activity android:name="com.theartofdev.edmodo.cropper.CropImageActivity"/>
+
         <activity android:name=".NewActivity"
             android:exported="false"/>
         <activity
@@ -42,11 +44,12 @@
             >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
+<!--        <activity android:name="com.theartofdev.edmodo.cropper.CropImageActivity"-->
+<!--            android:theme="@style/Base.Theme.AppCompat"/>-->
     </application>
 
 </manifest>

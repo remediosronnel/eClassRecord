@@ -1,42 +1,50 @@
-package com.remedios.eclassrecordteacher
+package com.remedios.eclassrecordteacher;
 
-import android.Manifest
-import android.app.Activity
-import android.content.ContentValues
-import android.content.Intent
-import android.content.pm.PackageManager
-import android.graphics.Bitmap
 import android.net.Uri
-import android.os.Bundle
-
-import android.provider.MediaStore
-import android.widget.Button
-import android.widget.ImageView
+import android.os.Bundle;
 import android.widget.Toast
-import androidx.appcompat.app.ActionBar
-import androidx.appcompat.app.AlertDialog
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AppCompatActivity;
 import com.remedios.eclassrecordteacher.databinding.ActivityTeachersProfileBinding
-import com.remedios.eclassrecordteacher.db.DBHelper
-import com.theartofdev.edmodo.cropper.CropImage
-import com.theartofdev.edmodo.cropper.CropImageView
+import com.remedios.eclassrecordteacher.db.Config
 
 
-class TeachersProfile : AppCompatActivity() {
-    private lateinit var binding: ActivityTeachersProfileBinding
-    private var uri:Uri? = null
-    private var bitmapImage:Bitmap? = null
-    private lateinit var dbHelper:DBHelper
+public class TeachersProfile: AppCompatActivity() {
+    lateinit var binding: ActivityTeachersProfileBinding
 
+    private var imageUri: Uri? = null
+
+    private val selectImage = registerForActivityResult(ActivityResultContracts.GetContent()){
+        imageUri = it
+    binding.profilePic.setImageURI(imageUri)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityTeachersProfileBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        setContentView(binding.root);
 
+        binding.profilePic.setOnClickListener{
+            selectImage.launch("image/*")
+        }
 
+        binding.profileSave.setOnClickListener {
+            validateData()
+        }
+    }
+    private fun validateData(){
+        if(binding.teacherName.text.toString().isEmpty() ||
+            binding.schoolName.text.toString().isEmpty() ||
+            binding.districtName.text.toString().isEmpty() ||
+            binding.divisionName.text.toString().isEmpty() ||
+            imageUri == null){
+            Toast.makeText(this, "Please enter all fields", Toast.LENGTH_SHORT).show()
 
+        }else {
+            uploadImage()
+        }
+    }
+    private fun uploadImage(){
+        Config.showDialog(this)
     }
 }
