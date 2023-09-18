@@ -30,11 +30,9 @@
         android:theme="@style/Theme.EClassRecordTeacher"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
+
         <activity
-            android:name=".SplashSceenActivity"
-            android:exported="false" />
-        <activity
-            android:name=".HomeActivity"
+            android:name=".TeachersProfile"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
@@ -43,7 +41,7 @@
             android:name=".NewActivity"
             android:exported="false" />
         <activity
-            android:name=".TeachersProfile"
+            android:name=".HomeActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

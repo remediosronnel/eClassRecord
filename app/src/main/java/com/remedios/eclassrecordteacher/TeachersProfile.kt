@@ -1,29 +1,38 @@
 package com.remedios.eclassrecordteacher;
 
 import android.content.Intent
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.net.Uri
 import android.os.Bundle;
+import android.view.View
 import android.widget.Toast
+import androidx.activity.result.ActivityResult
+import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity;
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
 import com.remedios.eclassrecordteacher.databinding.ActivityTeachersProfileBinding
 import com.remedios.eclassrecordteacher.db.Config
 import com.remedios.eclassrecordteacher.db.Config.hideDialog
 import com.remedios.eclassrecordteacher.db.UserModel
+import java.io.ByteArrayOutputStream
+import kotlin.io.encoding.Base64
 
 
 public class TeachersProfile: AppCompatActivity() {
     lateinit var binding: ActivityTeachersProfileBinding
 
-    private var imageUri: Uri? = null
-
-    private val selectImage = registerForActivityResult(ActivityResultContracts.GetContent()){
-        imageUri = it
-    binding.profilePic.setImageURI(imageUri)
-    }
+//    private var imageUri: Uri? = null
+            var sImage:String? = ""
+    private lateinit var db:DatabaseReference
+//    private val selectImage = registerForActivityResult(ActivityResultContracts.GetContent()){
+//        imageUri = it
+//    binding.profilePic.setImageURI(imageUri)
+//    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,69 +40,62 @@ public class TeachersProfile: AppCompatActivity() {
         setContentView(binding.root);
 
         binding.profilePic.setOnClickListener{
-            selectImage.launch("image/*")
+            insertImage()
         }
-
         binding.profileSave.setOnClickListener {
-            validateData()
+            insertData()
         }
     }
-    private fun validateData(){
-        if(binding.teacherName.text.toString().isEmpty() ||
-            binding.schoolName.text.toString().isEmpty() ||
-            binding.districtName.text.toString().isEmpty() ||
-            binding.divisionName.text.toString().isEmpty() ||
-            imageUri == null){
-            Toast.makeText(this, "Please enter all fields", Toast.LENGTH_SHORT).show()
+    private fun insertData(){
+            val name = binding.teacherName.text.toString()
+            val schoolName = binding.schoolName.text.toString()
+            val districtName = binding.districtName.text.toString()
+            val divisionName = binding.divisionName.text.toString()
+            db = FirebaseDatabase.getInstance().getReference("items")
+        val item = UserModel(name, schoolName, districtName, divisionName, sImage)
+        val databaseReference = FirebaseDatabase.getInstance().reference
+        val id = databaseReference.push().key
+        db.child(id.toString()).setValue(item).addOnCompleteListener {
+            binding.teacherName.text.clear()
+            binding.schoolName.text.clear()
+            sImage = ""
 
-        }else {
-            uploadImage()
         }
+        val intent = Intent(this, HomeActivity::class.java)
+        startActivity(intent)
     }
-    private fun uploadImage(){
-        Config.showDialog(this)
 
-        val storageRef = FirebaseStorage.getInstance().getReference("profile")
-            .child(FirebaseAuth.getInstance().currentUser!!.uid)
-            .child("profile.jpg")
+    private fun insertImage() {
+        var myfileIntent = Intent(Intent.ACTION_GET_CONTENT)
+        myfileIntent.setType("image/*")
+        ActivityResultLauncher.launch(myfileIntent)
+    }
+
+    private val ActivityResultLauncher = registerForActivityResult<Intent, ActivityResult>(
+        ActivityResultContracts.StartActivityForResult()
+    ) { result: ActivityResult ->
+        if (result.resultCode == RESULT_OK) {
+            var uri = result.data!!.data
+            try {
+                val inputStream = contentResolver.openInputStream(uri!!)
+                val myBitmap = BitmapFactory.decodeStream(inputStream)
+                val stream = ByteArrayOutputStream()
+                myBitmap.compress(Bitmap.CompressFormat.PNG, 100, stream)
+                val bytes = stream.toByteArray()
+                sImage = android.util.Base64.encodeToString(bytes, android.util.Base64.DEFAULT)
+                binding.profilePic.setImageBitmap(myBitmap)
+                inputStream!!.close()
+                Toast.makeText(this, "Image Selected", Toast.LENGTH_SHORT).show()
 
 
-        storageRef.putFile(imageUri!!)
-            .addOnSuccessListener {
-                storageRef.downloadUrl.addOnSuccessListener {
-                    storeData(it)
-                }.addOnFailureListener {
-                    hideDialog()
-                    Toast.makeText(this, it.message, Toast.LENGTH_SHORT).show()
-                }
-            }.addOnFailureListener {
-                hideDialog()
-                Toast.makeText(this, it.message, Toast.LENGTH_SHORT).show()
+
+
+            } catch (ex: Exception) {
+                Toast.makeText(this, ex.message.toString(), Toast.LENGTH_SHORT).show()
             }
+        }
+
+
     }
 
-    private fun storeData(imageUrl: Uri?) {
-        val data = UserModel(
-            name = binding.teacherName.text.toString(),
-            schoolName = binding.schoolName.text.toString(),
-            districtName = binding.divisionName.text.toString(),
-            divisionName = binding.divisionName.text.toString(),
-            image = imageUrl.toString()
-        )
-
-        FirebaseDatabase.getInstance().getReference("users")
-            .child(FirebaseAuth.getInstance().currentUser!!.displayName!!)
-            .setValue(data).addOnCompleteListener {
-                hideDialog()
-                if(it.isSuccessful){
-
-                        startActivity(Intent(this, NewActivity::class.java))
-                        finish()
-//                        Toast.makeText(this, "User register successfully", Toast.LENGTH_SHORT).show()
-                }else{
-                    Toast.makeText(this, it.exception!!.message, Toast.LENGTH_SHORT).show()
-                }
-
-            }
-    }
 }

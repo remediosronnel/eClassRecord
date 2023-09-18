@@ -27,7 +27,12 @@
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/fragment_container"/>
+            android:id="@+id/fragment_container">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </FrameLayout>
 
     </LinearLayout>
 
@@ -40,28 +45,6 @@
         app:menu="@menu/nav_menu"
         app:itemIconTint="@color/blue"
         app:itemTextColor="@color/blue"/>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fab"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentEnd="true"
-            android:layout_margin="40dp"
-            android:backgroundTint="@color/steel"
-            android:tint="@color/white"
-            android:src="@drawable/ic_profile"
-            />
-
-
-
-
-    </RelativeLayout>
-
 
 
 </androidx.drawerlayout.widget.DrawerLayout>
