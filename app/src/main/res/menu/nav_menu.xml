@@ -10,31 +10,31 @@
         >
 
         <item
-            android:id="@+id/botton_home"
+            android:id="@+id/nav_home"
             android:title="Home"
             android:icon="@drawable/ic_home"
             />
 
         <item
-            android:id="@+id/botton_classes"
+            android:id="@+id/nav_classes"
             android:title="Classes"
             android:icon="@drawable/ic_classes"
             />
 
         <item
-            android:id="@+id/botton_profile"
+            android:id="@+id/nav_profile"
             android:title="Profile"
             android:icon="@drawable/ic_profile"
             />
 
         <item
-            android:id="@+id/button_save"
+            android:id="@+id/nav_save"
             android:title="Save"
             android:icon="@drawable/ic_save"
             />
 
         <item
-            android:id="@+id/button_logout"
+            android:id="@+id/nav_logout"
             android:title="Logout"
             android:icon="@drawable/ic_logout"
 

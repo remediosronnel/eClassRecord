@@ -31,23 +31,29 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         val toggle = ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.open_nav, R.string.close_nav)
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
+
         if(savedInstanceState == null){
             replaceFragment(HomeFragment())
-            navigationView.setCheckedItem(R.id.nav_view)
+            navigationView.setCheckedItem(R.id.nav_home)
         }
 
     }
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
-            R.id.nav_home -> replaceFragment(HomeFragment())
-            R.id.nav_classes -> replaceFragment(ClassesFragment())
-            R.id.nav_logout ->{
+            R.id.nav_home -> {
+                replaceFragment(HomeFragment())
+            }
+            R.id.nav_classes -> {
+                replaceFragment(ClassesFragment())
+            }
+            R.id.nav_logout -> {
                 Toast.makeText(this, "Logout!!", Toast.LENGTH_SHORT).show()
                 application.onTerminate()
+
             }
+
         }
         drawerLayout.closeDrawer(GravityCompat.START)
-
         return true
     }
 
