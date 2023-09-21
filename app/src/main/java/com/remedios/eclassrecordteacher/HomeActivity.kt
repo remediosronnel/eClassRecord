@@ -59,7 +59,6 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
 
         databaseReference.get().addOnSuccessListener {
-
             val name = it.child("name").value
             teacherName = name as TextView?
         }
