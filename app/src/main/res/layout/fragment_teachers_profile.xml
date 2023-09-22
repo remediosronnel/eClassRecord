@@ -31,7 +31,7 @@
         android:id="@+id/profile_picTeacher"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginLeft="50dp"
+        android:layout_marginStart="75dp"
         app:civ_border_overlay="true"
         app:civ_border_color="@color/blue"
         android:layout_marginTop="25dp"
