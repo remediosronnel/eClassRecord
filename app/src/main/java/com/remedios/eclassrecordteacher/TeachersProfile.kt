@@ -129,7 +129,7 @@ public class TeachersProfile: AppCompatActivity() {
         }
     private fun storageImage(){
         if (uri != null) {
-            storageRef.getReference("images/id")
+            storageRef.getReference("images")
                 .child(System.currentTimeMillis().toString())
                 .putFile(uri!!)
                 .addOnSuccessListener { task ->

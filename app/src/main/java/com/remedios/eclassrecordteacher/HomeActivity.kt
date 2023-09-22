@@ -1,5 +1,6 @@
 package com.remedios.eclassrecordteacher
 
+import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -15,13 +16,19 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import com.google.android.material.navigation.NavigationView
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.FirebaseStorage.*
 import com.google.firebase.storage.StorageReference
 import com.remedios.eclassrecordteacher.databinding.ActivityHomeBinding
 import com.remedios.eclassrecordteacher.fragment.ClassesFragment
 import com.remedios.eclassrecordteacher.fragment.HomeFragment
+import com.remedios.eclassrecordteacher.fragment.TeachersProfile
 import de.hdodenhof.circleimageview.CircleImageView
 import java.io.File
 
@@ -33,8 +40,8 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     private lateinit var storageReference: StorageReference
     private lateinit var databaseReference : DatabaseReference
-
-
+    lateinit var auth:FirebaseAuth
+    var userID:String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,27 +49,27 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         setContentView(binding.root)
 
         drawerLayout = findViewById<DrawerLayout>(R.id.drawer_layout)
-        circleImageView = findViewById<CircleImageView?>(R.id.nav_picture)
-        teacherName = findViewById<TextView>(R.id.nav_name)
+        circleImageView = binding.navView.findViewById(R.id.nav_picture)
+        teacherName = binding.navView.findViewById<TextView>(R.id.nav_name)
+
+        auth = FirebaseAuth.getInstance()
+        userID = auth.currentUser?.uid
 
 
-
-        storageReference = FirebaseStorage.getInstance().getReference("images")
-        databaseReference = FirebaseDatabase.getInstance().getReference("users")
-        var localFile:File = File.createTempFile("tempFile", ".jpg")
+        storageReference = getInstance().getReference("images")
+        val localFile:File = File.createTempFile("tempFile", ".jpg")
         storageReference.getFile(localFile).addOnSuccessListener {
-            var bitmap = BitmapFactory.decodeFile(localFile.absolutePath)
-            circleImageView!!.setImageBitmap(bitmap)
+            val bitmap = BitmapFactory.decodeFile(localFile.absolutePath)
 
+            circleImageView?.setImageBitmap(bitmap)
         }
 
-
-
-        databaseReference.get().addOnSuccessListener {
-            val name = it.child("name").value
-            teacherName = name as TextView?
-        }
-
+            databaseReference = FirebaseDatabase.getInstance().getReference("users")
+            databaseReference.get()
+                .addOnSuccessListener {
+                val nameYou = it.child("name").value.toString()
+                    teacherName?.text = nameYou
+            }
 
 
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
@@ -89,6 +96,10 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             R.id.nav_classes -> {
                 replaceFragment(ClassesFragment())
             }
+            R.id.nav_profile -> {
+                replaceFragment(TeachersProfile())
+            }
+
             R.id.nav_logout -> {
                 Toast.makeText(this, "Logout!!", Toast.LENGTH_SHORT).show()
                 HomeActivity().stopService(intent)
