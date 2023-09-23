@@ -11,17 +11,15 @@ import android.widget.Toast
 
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.widget.Toolbar
+import androidx.core.graphics.get
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.FirebaseStorage.*
 import com.google.firebase.storage.StorageReference
@@ -38,10 +36,11 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     private var teacherName: TextView? = null
     private lateinit var binding:ActivityHomeBinding
 
-    private lateinit var storageReference: StorageReference
+    private var storage: FirebaseStorage = getInstance()
+    private var storageReference:StorageReference = storage.reference
     private lateinit var databaseReference : DatabaseReference
     lateinit var auth:FirebaseAuth
-    var userID:String? = null
+    lateinit var userID:String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -53,21 +52,25 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         teacherName = binding.navView.findViewById<TextView>(R.id.nav_name)
 
         auth = FirebaseAuth.getInstance()
-        userID = auth.currentUser?.uid
+        userID = auth.currentUser!!.uid
 
 
-        storageReference = getInstance().getReference("images")
-        val localFile:File = File.createTempFile("tempFile", ".jpg")
-        storageReference.getFile(localFile).addOnSuccessListener {
+        val storage1 = storageReference.child("images/")
+        val localFile = File.createTempFile("tempFile", "jpg")
+        storage1.getFile(localFile).addOnSuccessListener {
+
             val bitmap = BitmapFactory.decodeFile(localFile.absolutePath)
 
             circleImageView?.setImageBitmap(bitmap)
+        }.addOnFailureListener {
+            Toast.makeText(this, "Daot ang Storage", Toast.LENGTH_SHORT).show()
         }
 
-            databaseReference = FirebaseDatabase.getInstance().getReference("users")
-            databaseReference.get()
+
+            databaseReference = FirebaseDatabase.getInstance().getReference("users/")
+            databaseReference.child("name").get()
                 .addOnSuccessListener {
-                val nameYou = it.child("name").value.toString()
+                val nameYou = it.value.toString()
                     teacherName?.text = nameYou
             }
 

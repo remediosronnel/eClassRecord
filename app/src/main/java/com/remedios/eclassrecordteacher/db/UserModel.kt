@@ -10,4 +10,7 @@ data class UserModel(
     val districtName:String? = "",
     val divisionName:String? = "",
     val image:String? = ""
-)
+){
+
+
+}

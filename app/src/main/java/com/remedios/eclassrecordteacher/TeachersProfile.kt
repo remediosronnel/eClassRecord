@@ -36,10 +36,13 @@ public class TeachersProfile: AppCompatActivity() {
     private var authenticationName = false
     private lateinit var uri:Uri
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityTeachersProfileBinding.inflate(layoutInflater)
         setContentView(binding.root);
+        var user = FirebaseAuth.getInstance()
+        user.signInAnonymously()
 
         storageRef = FirebaseStorage.getInstance()
         binding.profilePic.setOnClickListener{
@@ -52,7 +55,6 @@ public class TeachersProfile: AppCompatActivity() {
             insertData()
 
         }
-
 
 
     }
