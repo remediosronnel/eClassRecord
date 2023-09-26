@@ -1,10 +1,12 @@
 package com.remedios.eclassrecordteacher
 
+import android.media.Image
 import android.net.Uri
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
+import android.widget.ImageView
 
 import android.widget.TextView
 import android.widget.Toast
@@ -15,9 +17,12 @@ import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
+import com.bumptech.glide.Glide
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.DatabaseReference
+import com.google.firebase.ktx.Firebase
 
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.FirebaseStorage.*
@@ -28,10 +33,11 @@ import com.remedios.eclassrecordteacher.fragment.HomeFragment
 import com.remedios.eclassrecordteacher.fragment.TeachersProfile
 import de.hdodenhof.circleimageview.CircleImageView
 import java.io.File
+import kotlin.system.exitProcess
 
 class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
             private lateinit var drawerLayout:DrawerLayout
-            private var circleImageView: CircleImageView? = null
+            private var imageView: ImageView? = null
             private var teacherName: TextView? = null
             private lateinit var binding:ActivityHomeBinding
 
@@ -50,15 +56,11 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
 
                 drawerLayout = findViewById(R.id.drawer_layout)
-                circleImageView = binding.navView.findViewById(R.id.nav_picture)
+                imageView = findViewById<ImageView>(R.id.nav_picture)
                 teacherName = binding.navView.findViewById(R.id.nav_name)
 
-                auth = FirebaseAuth.getInstance()
-                userID = auth.currentUser!!.uid
-
-
-
-
+                auth = Firebase.auth
+                auth.signInAnonymously()
 
 
                 val toolbar = findViewById<Toolbar>(R.id.toolbar)
@@ -75,11 +77,8 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                     replaceFragment(HomeFragment())
                     navigationView.setCheckedItem(R.id.nav_home)
                 }
-                val intent = intent
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-                    intent.getParcelableExtra("image", com.remedios.eclassrecordteacher.TeachersProfile::class.java)
-                }
-                circleImageView?.setImageURI(uri)
+
+
 
 
             }
@@ -96,8 +95,8 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                     }
 
                     R.id.nav_logout -> {
-                        Toast.makeText(this, "Logout!!", Toast.LENGTH_SHORT).show()
-                        HomeActivity().stopService(intent)
+                        exitProcess(0)
+
 
                     }
 

@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="261dp"
         android:orientation="vertical"
-        android:paddingTop="50dp"
+        android:paddingTop="75dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -163,5 +163,16 @@
             android:layout_marginTop="30dp"
             android:background="@drawable/switch_background"
             android:text="SAVE" />
+
+
+        <Button
+            android:id="@+id/btn_cancel"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/switch_background"
+            android:text="CANCEL" />
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

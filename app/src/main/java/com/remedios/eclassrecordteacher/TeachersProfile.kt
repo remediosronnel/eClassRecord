@@ -6,13 +6,17 @@ import android.graphics.BitmapFactory
 import android.net.Uri
 import android.os.Bundle;
 import android.util.Base64
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.Toast
+import android.window.OnBackInvokedDispatcher
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ReportFragment.Companion.reportFragment
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.auth.ktx.userProfileChangeRequest
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
@@ -24,37 +28,41 @@ import com.remedios.eclassrecordteacher.db.UserModel
 import kotlinx.coroutines.currentCoroutineContext
 import kotlinx.coroutines.isActive
 import java.io.ByteArrayOutputStream
+import kotlin.system.exitProcess
 
 
 public class TeachersProfile: AppCompatActivity() {
     private lateinit var binding: ActivityTeachersProfileBinding
-
-    //    private var imageUri: Uri? = null
+    private lateinit var auth: FirebaseAuth
+    private var uri: Uri? = null
     private var sImage:String = ""
     private lateinit var db:DatabaseReference
     private var storageRef = Firebase.storage
-    private var authenticationName = false
-    private lateinit var uri:Uri
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityTeachersProfileBinding.inflate(layoutInflater)
         setContentView(binding.root);
-        var user = FirebaseAuth.getInstance()
-        user.signInAnonymously()
-
-        storageRef = FirebaseStorage.getInstance()
-        binding.profilePic.setOnClickListener{
-
-                insertImage()
+        auth = Firebase.auth
+        auth.signInAnonymously()
 
 
-        }
-        binding.profileSave.setOnClickListener {
-            insertData()
 
-        }
+
+                binding.profilePic.setOnClickListener {
+
+                    insertImage()
+
+                }
+                binding.profileSave.setOnClickListener {
+                    insertData()
+                    val intent = Intent(this, HomeActivity::class.java)
+                    startActivity(intent)
+
+
+                }
 
 
     }
@@ -66,7 +74,7 @@ public class TeachersProfile: AppCompatActivity() {
         val divisionName = binding.divisionName.text.toString()
 
 
-        if (name.isNotEmpty() && schoolName.isNotEmpty() && districtName.isNotEmpty() && divisionName.isNotEmpty() && sImage?.isNotEmpty() == true && !authenticationName) {
+        if (name.isNotEmpty() && schoolName.isNotEmpty() && districtName.isNotEmpty() && divisionName.isNotEmpty() && sImage?.isNotEmpty() == true) {
             db = FirebaseDatabase.getInstance().getReference("users")
             val item = UserModel(name, schoolName, districtName, divisionName, sImage)
             val databaseReference = FirebaseDatabase.getInstance().reference
@@ -81,9 +89,7 @@ public class TeachersProfile: AppCompatActivity() {
 
             storageImage()
 
-            val intent = intent
-            intent.putExtra("image", uri)
-            startActivity(intent)
+//
         }
 
 
@@ -95,8 +101,7 @@ public class TeachersProfile: AppCompatActivity() {
 
     private fun insertImage() {
         var myfileIntent = Intent(Intent.ACTION_GET_CONTENT)
-        myfileIntent.setType("image/*")
-        startActivityForResult(myfileIntent,  1)
+        myfileIntent.type = "image/*"
         ActivityResultLauncher.launch(myfileIntent)
 
     }
@@ -118,12 +123,9 @@ public class TeachersProfile: AppCompatActivity() {
                     Toast.makeText(this, "Image Selected", Toast.LENGTH_SHORT).show()
 
 
-
-
                 } catch (ex: Exception) {
                     Toast.makeText(this, ex.message.toString(), Toast.LENGTH_SHORT).show()
                 }
-
 
 
             }
@@ -142,15 +144,5 @@ public class TeachersProfile: AppCompatActivity() {
         }
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-
-        if (requestCode==1 && data!=null){
-            uri = data.data!!
-            binding.profilePic.setImageURI(uri)
-
-        }
-
-    }
 
 }
