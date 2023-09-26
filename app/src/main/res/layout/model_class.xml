@@ -24,7 +24,7 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/class_name"
+                android:id="@+id/classes_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="MATH GRADE 4"
@@ -40,7 +40,7 @@
                 android:src="@drawable/ic_student" />
 
             <TextView
-                android:id="@+id/student_total"
+                android:id="@+id/student_number"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
@@ -63,6 +63,7 @@
                 android:textColor="@color/blue" />
 
             <TextView
+                android:id="@+id/teacher_incharge"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Ronnel Remedios"

@@ -81,7 +81,8 @@ public class TeachersProfile: AppCompatActivity() {
 
             storageImage()
 
-            val intent = Intent(this, HomeActivity::class.java)
+            val intent = intent
+            intent.putExtra("image", uri)
             startActivity(intent)
         }
 
@@ -95,8 +96,8 @@ public class TeachersProfile: AppCompatActivity() {
     private fun insertImage() {
         var myfileIntent = Intent(Intent.ACTION_GET_CONTENT)
         myfileIntent.setType("image/*")
+        startActivityForResult(myfileIntent,  1)
         ActivityResultLauncher.launch(myfileIntent)
-
 
     }
 
@@ -140,4 +141,16 @@ public class TeachersProfile: AppCompatActivity() {
                 }
         }
     }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if (requestCode==1 && data!=null){
+            uri = data.data!!
+            binding.profilePic.setImageURI(uri)
+
+        }
+
+    }
+
 }
