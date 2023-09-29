@@ -10,8 +10,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.FragmentTransaction
-import com.remedios.eclassrecordteacher.AddClass
 import com.remedios.eclassrecordteacher.R
+import com.remedios.eclassrecordteacher.classes.AddClass
 import com.remedios.eclassrecordteacher.databinding.FragmentClassesBinding
 
 class ClassesFragment : Fragment() {
@@ -25,8 +25,10 @@ class ClassesFragment : Fragment() {
         _binding = FragmentClassesBinding.inflate(inflater, container, false)
 
         binding.addClassButton.setOnClickListener {
-            val intent = Intent(context, AddClass::class.java)
-            startActivity(intent)
+            val transaction: FragmentTransaction = requireFragmentManager().beginTransaction()
+            transaction.replace(R.id.fragment_container, AddClass())
+            transaction.addToBackStack(null)
+            transaction.commit()
 
 
         }

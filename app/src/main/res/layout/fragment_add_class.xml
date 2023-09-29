@@ -4,22 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/img_background_1"
-    >
+    android:background="@drawable/switch_background"
+    tools:context=".classes.AddClass">
 
 
     <LinearLayout
+
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="261dp"
+        android:layout_height="711dp"
+        android:layout_marginBottom="20dp"
         android:orientation="vertical"
         android:paddingTop="75dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toTopOf="parent">
 
         <FrameLayout
             android:layout_width="match_parent"
@@ -36,9 +35,9 @@
                 android:layout_marginRight="10dp"
                 android:background="@color/white"
                 android:clipToOutline="true"
+                android:fontFamily="@font/font_caprasimo_cegular"
                 android:paddingTop="10dp"
                 android:text="ADD CLASS"
-                android:fontFamily="@font/font_caprasimo_cegular"
                 android:textAlignment="center"
                 android:textSize="30sp"
                 android:textStyle="normal|bold"
@@ -71,8 +70,8 @@
                     android:id="@+id/class_name"
                     android:layout_width="221dp"
                     android:layout_height="50dp"
-                    android:background="@color/white"
                     android:layout_marginLeft="5dp"
+                    android:background="@color/white"
                     android:hint="Enter Class Name" />
 
             </LinearLayout>
@@ -96,8 +95,8 @@
                     android:id="@+id/class_teacher"
                     android:layout_width="221dp"
                     android:layout_height="50dp"
-                    android:background="@color/white"
                     android:layout_marginLeft="5dp"
+                    android:background="@color/white"
                     android:hint="Enter Class Teacher" />
 
             </LinearLayout>
@@ -121,8 +120,8 @@
                     android:id="@+id/class_start_date"
                     android:layout_width="221dp"
                     android:layout_height="50dp"
-                    android:background="@color/white"
                     android:layout_marginLeft="5dp"
+                    android:background="@color/white"
                     android:hint="MM-DD-YY" />
 
             </LinearLayout>
@@ -146,8 +145,8 @@
                     android:id="@+id/class_end_date"
                     android:layout_width="221dp"
                     android:layout_height="50dp"
-                    android:background="@color/white"
                     android:layout_marginLeft="5dp"
+                    android:background="@color/white"
                     android:hint="MM-DD-YY" />
 
             </LinearLayout>
