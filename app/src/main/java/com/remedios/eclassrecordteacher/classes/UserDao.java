@@ -5,6 +5,8 @@ import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
 
+import java.util.List;
+
 @Dao
 public interface UserDao {
 
@@ -18,8 +20,6 @@ public interface UserDao {
     void delete(int id);
 
     @Query("Select * from Users")
-    void getAllUsers();
-
-
+    List<Users> getAllUsers();
 
 }

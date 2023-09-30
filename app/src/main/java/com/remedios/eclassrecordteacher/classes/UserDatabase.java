@@ -1,11 +1,12 @@
 package com.remedios.eclassrecordteacher.classes;
 
 import android.content.Context;
+
 import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
-@Database(entities = {Users.class}, version = 1)
+@Database(entities = {Users.class}, version = 2)
 public abstract class UserDatabase extends RoomDatabase {
 
     public abstract UserDao getDao();

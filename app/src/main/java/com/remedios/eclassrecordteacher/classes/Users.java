@@ -3,21 +3,19 @@ package com.remedios.eclassrecordteacher.classes;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-import java.sql.Date;
-
 @Entity
 public class Users {
 
     @PrimaryKey(autoGenerate = true)
-    private final int id;
+    private int id;
     private final String className;
-    private final String teacherName;
-    private final Date startDate;
-    private final Date endDate;
+    private String teacherName;
 
+    private String startDate;
+    private String endDate;
     private int studentNumber;
 
-    public Users(int id, String className, String teacherName, Date startDate, Date endDate, int studentNumber){
+    public Users(int id, String className, String teacherName, String startDate, String endDate, int studentNumber){
         this.id = id;
         this.teacherName = teacherName;
         this.className = className;
@@ -30,23 +28,41 @@ public class Users {
         return id;
     }
 
+    public void setId(int id){
+        this.id = id;
+    }
     public String getTeacherName() {
         return teacherName;
+    }
+
+    public void setTeacherName(){
+        this.teacherName = teacherName;
     }
 
     public String getClassName() {
         return className;
     }
 
-    public Date getStartDate() {
+
+    public int getStudentNumber() {
+        return studentNumber;
+    }
+    public void setStudentNumber(){
+        this.studentNumber = studentNumber;
+    }
+
+    public String getStartDate() {
         return startDate;
     }
 
-    public Date getEndDate() {
-        return endDate;
+    public void setStartDate(){
+        this.startDate = startDate;
     }
 
-    public void setStudentNumber(int studentNumber) {
-        this.studentNumber = studentNumber;
+    public String getEndDate() {
+        return endDate;
+    }
+    public void setEndDate(){
+        this.endDate = endDate;
     }
 }
