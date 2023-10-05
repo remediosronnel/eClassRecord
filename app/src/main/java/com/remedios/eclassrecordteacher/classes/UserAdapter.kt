@@ -41,7 +41,7 @@ class UserAdapter(val c:Context, val userList: ArrayList<UserData>) : RecyclerVi
                             AlertDialog.Builder(c)
                                 .setView(v)
                                 .setPositiveButton("Ok") { dialog, _ ->
-                                    position.className = name.text.toString()
+                                    position.className = className.text.toString()
                                     position.teacherName = teacherName.text.toString()
                                     notifyDataSetChanged()
                                     Toast.makeText(

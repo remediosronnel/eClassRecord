@@ -9,10 +9,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.remedios.eclassrecordteacher.R
-import com.remedios.eclassrecordteacher.classes.AddClass
 import com.remedios.eclassrecordteacher.classes.UserAdapter
 import com.remedios.eclassrecordteacher.databinding.FragmentClassesBinding
 
