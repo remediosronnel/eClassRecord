@@ -14,6 +14,7 @@ android {
     namespace 'com.remedios.eclassrecordteacher'
     compileSdk 33
 
+
     defaultConfig {
         applicationId "com.remedios.eclassrecordteacher"
         minSdk 28
@@ -75,6 +76,8 @@ dependencies {
     implementation 'com.firebaseui:firebase-ui-storage:7.2.0'
     implementation(platform("com.google.firebase:firebase-bom:32.3.1"))
     implementation("com.google.firebase:firebase-analytics-ktx")
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.7.2'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.7.2'
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
@@ -102,12 +105,12 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-common-java8:2.6.2"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2"
 
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.8.22"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.4.30"
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.1'
 
 
-//    implementation 'androidx.navigation:navigation-fragment-ktx:2.7.2'
-//    implementation 'androidx.navigation:navigation-ui-ktx:2.7.2'
+//    implementation 'androidx.navigation:navigation-fragment-ktx:2.7.4'
+//    implementation 'androidx.navigation:navigation-ui-ktx:2.7.4'
 
 
 

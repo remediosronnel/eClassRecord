@@ -96,7 +96,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
                     R.id.nav_logout -> {
                         exitProcess(0)
-
+                        com.remedios.eclassrecordteacher.TeachersProfile().finish()
 
                     }
 

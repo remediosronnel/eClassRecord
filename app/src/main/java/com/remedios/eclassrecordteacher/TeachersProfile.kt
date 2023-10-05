@@ -60,7 +60,7 @@ public class TeachersProfile: AppCompatActivity() {
                     insertData()
                     val intent = Intent(this, HomeActivity::class.java)
                     startActivity(intent)
-
+                    finishAffinity()
 
                 }
 

@@ -27,13 +27,14 @@
           android:layout_marginStart="200dp"
           android:text="Add Class" />
    </LinearLayout>
+
    <androidx.recyclerview.widget.RecyclerView
+       android:id="@+id/class_recyclerView"
        android:layout_width="match_parent"
-       android:layout_marginTop="130dp"
-       android:layout_marginLeft="10dp"
-       android:layout_marginRight="10dp"
        android:layout_height="match_parent"
-       tools:listitem="@layout/model_class"
-      />
+       android:layout_marginLeft="10dp"
+       android:layout_marginTop="130dp"
+       android:layout_marginRight="10dp"
+       tools:listitem="@layout/model_class" />
 
 </FrameLayout>

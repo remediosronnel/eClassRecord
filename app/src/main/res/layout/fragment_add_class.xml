@@ -67,7 +67,7 @@
                     android:textSize="20sp" />
 
                 <EditText
-                    android:id="@+id/class_name1"
+                    android:id="@+id/class_nameAddClass"
                     android:layout_width="221dp"
                     android:layout_height="50dp"
                     android:layout_marginLeft="5dp"
@@ -92,7 +92,7 @@
                     android:textSize="20sp" />
 
                 <EditText
-                    android:id="@+id/class_teacher1"
+                    android:id="@+id/class_teacherAddClass"
                     android:layout_width="221dp"
                     android:layout_height="50dp"
                     android:layout_marginLeft="5dp"
