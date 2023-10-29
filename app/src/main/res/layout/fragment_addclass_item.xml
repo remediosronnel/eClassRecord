@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:background="@drawable/switch_background"
-    tools:context=".classes.AddingClass">
+    android:gravity="center">
 
 
     <LinearLayout
-
         android:layout_width="match_parent"
-        android:layout_height="711dp"
-        android:layout_marginBottom="20dp"
+        android:layout_height="644dp"
         android:orientation="vertical"
         android:paddingTop="75dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -49,96 +48,96 @@
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_marginTop="10dp"
             android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="25dp"
                 android:layout_marginRight="5dp"
-                android:orientation="horizontal">
+                android:gravity="center"
+                android:orientation="vertical">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="25dp"
-                    android:text="New Class Name: "
+                    android:text="New Class Name"
                     android:textSize="20sp" />
 
                 <EditText
                     android:id="@+id/class_nameAddClass"
                     android:layout_width="221dp"
                     android:layout_height="50dp"
-                    android:layout_marginLeft="5dp"
-                    android:background="@color/white"
-                    android:hint="Enter Class Name" />
+                    android:background="@drawable/text_editor"
+                    android:hint="Enter Class Name"
+                    android:textAlignment="center" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="100dp"
                 android:layout_marginRight="5dp"
-                android:orientation="horizontal">
+                android:gravity="center"
+                android:orientation="vertical">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="25dp"
-                    android:layout_marginLeft="25dp"
-                    android:text="Class Teacher: "
+                    android:text="Class Teacher"
                     android:textSize="20sp" />
 
                 <EditText
                     android:id="@+id/class_teacherAddClass"
                     android:layout_width="221dp"
                     android:layout_height="50dp"
-                    android:layout_marginLeft="5dp"
-                    android:background="@color/white"
-                    android:hint="Enter Class Teacher" />
+                    android:background="@drawable/text_editor"
+                    android:hint="Enter Class Teacher"
+                    android:textAlignment="center" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="175dp"
                 android:layout_marginRight="5dp"
-                android:orientation="horizontal">
+                android:orientation="vertical">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="25dp"
-                    android:layout_marginLeft="60dp"
-                    android:text="Start Date: "
+                    android:text="Start Date"
                     android:textSize="20sp" />
 
                 <EditText
                     android:id="@+id/class_start_date"
                     android:layout_width="221dp"
                     android:layout_height="50dp"
-                    android:layout_marginLeft="5dp"
-                    android:background="@color/white"
-                    android:hint="MM-DD-YY" />
+                    android:background="@drawable/text_editor"
+                    android:hint="MM-DD-YY"
+                    android:textAlignment="center" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_marginLeft="5dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="250dp"
-                android:layout_marginRight="5dp"
-                android:orientation="horizontal">
+                android:gravity="center"
+                android:orientation="vertical">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="25dp"
-                    android:layout_marginLeft="65dp"
-                    android:text="End Date: "
+                    android:text="End Date"
                     android:textSize="20sp" />
 
                 <EditText
@@ -146,32 +145,15 @@
                     android:layout_width="221dp"
                     android:layout_height="50dp"
                     android:layout_marginLeft="5dp"
-                    android:background="@color/white"
-                    android:hint="MM-DD-YY" />
+                    android:background="@drawable/text_editor"
+                    android:hint="MM-DD-YY"
+                    android:textAlignment="center" />
 
             </LinearLayout>
 
 
         </FrameLayout>
 
-        <Button
-            android:id="@+id/btn_save1"
-            android:layout_width="250dp"
-            android:layout_height="50dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="30dp"
-            android:background="@drawable/switch_background"
-            android:text="SAVE" />
-
-
-        <Button
-            android:id="@+id/btn_cancel"
-            android:layout_width="250dp"
-            android:layout_height="50dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="30dp"
-            android:background="@drawable/switch_background"
-            android:text="CANCEL" />
 
     </LinearLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

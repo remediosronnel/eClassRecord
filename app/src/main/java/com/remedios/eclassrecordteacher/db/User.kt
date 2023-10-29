@@ -1,6 +1,6 @@
 package com.remedios.eclassrecordteacher.db
 
-import android.media.Image
+
 import androidx.room.PrimaryKey
 
 data class User(

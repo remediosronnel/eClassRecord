@@ -79,146 +79,57 @@
             android:layout_marginRight="5dp"
             android:orientation="horizontal">
 
-            <FrameLayout
-                android:id="@+id/frame_students"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+            <!--                <ImageView-->
+<!--                    android:layout_width="50dp"-->
+<!--                    android:layout_height="50dp"-->
+<!--                    android:layout_marginLeft="3dp"-->
+<!--                    android:layout_marginBottom="15dp"-->
+<!--                    android:scaleType="fitCenter"-->
+<!--                    android:src="@drawable/ic_student" />-->
 
-                <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_marginLeft="3dp"
-                    android:layout_marginBottom="15dp"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/ic_student" />
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_gravity="bottom"-->
+<!--                    android:text="Students"-->
+<!--                    android:textColor="@color/blue" />-->
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="bottom"
-                    android:text="Students"
-                    android:textColor="@color/blue" />
 
-            </FrameLayout>
+            <Button
+                android:id="@+id/frame_studentsClass"
+                android:layout_width="103dp"
+                android:layout_height="wrap_content"
+                android:text="Student"
 
-            <FrameLayout
-                android:id="@+id/frame_attendance"
+                />
+
+
+            <Button
+                android:id="@+id/frame_examsClass"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp">
+                android:layout_marginLeft="5dp"
+                android:text="exams"
+                />
 
-                <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_marginLeft="3dp"
-                    android:layout_marginBottom="15dp"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/ic_attendance" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="bottom"
-                    android:text="Attendance"
-                    android:textColor="@color/blue"
-                    android:textSize="10sp" />
-
-            </FrameLayout>
-
-            <FrameLayout
-                android:id="@+id/frame_oral"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp">
-
-                <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_marginLeft="3dp"
-                    android:layout_marginBottom="15dp"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/ic_oral" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="bottom"
-                    android:text="Oral Rec"
-                    android:textColor="@color/blue" />
-
-            </FrameLayout>
-
-            <FrameLayout
-                android:id="@+id/frame_exams"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp">
-
-                <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_marginLeft="3dp"
-                    android:layout_marginBottom="15dp"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/ic_exam" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="bottom"
-                    android:layout_marginLeft="5dp"
-                    android:text="Exams"
-                    android:textColor="@color/blue" />
-
-            </FrameLayout>
-
-            <FrameLayout
+            <Button
                 android:id="@+id/frame_editClass"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp">
+                android:layout_marginLeft="5dp"
+                android:text="Edit"
+                />
 
-                <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_marginLeft="3dp"
-                    android:layout_marginBottom="15dp"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/ic_edit" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="bottom"
-                    android:layout_marginLeft="15dp"
-                    android:text="Edit"
-                    android:textColor="@color/blue" />
-
-            </FrameLayout>
-
-            <FrameLayout
-                android:id="@+id/frame_delete"
+            <Button
+                android:id="@+id/frame_deleteClass"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp">
+                android:layout_marginLeft="5dp"
+                android:text="Delete"
+                />
 
-                <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_marginLeft="3dp"
-                    android:layout_marginBottom="15dp"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/ic_delete" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="bottom"
-                    android:layout_marginLeft="5dp"
-                    android:text="Delete"
-                    android:textColor="@color/blue" />
-
-            </FrameLayout>
 
         </LinearLayout>
 
