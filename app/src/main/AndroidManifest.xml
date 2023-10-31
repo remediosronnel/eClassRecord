@@ -35,9 +35,8 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="tiramisu">
         <activity
-            android:name=".classes.AddingClass"
+            android:name=".student.AddStudent"
             android:exported="false"
-            android:label="@string/title_activity_adding_class"
             android:theme="@style/Theme.EClassRecordTeacher" />
         <activity
             android:name=".TeachersProfile"

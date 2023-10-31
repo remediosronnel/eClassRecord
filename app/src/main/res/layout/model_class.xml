@@ -2,7 +2,6 @@
 <androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -59,7 +58,59 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingLeft="200dp"
+                android:textColor="@color/black"
+                android:text="Start Date:"/>
+
+            <TextView
+                android:id="@+id/classStartDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:textColor="@color/blue"
+                android:text="10-12-16"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:textColor="@color/black"
+                android:text="Start Date:"/>
+
+            <TextView
+                android:id="@+id/classEndDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:textColor="@color/blue"
+                android:text="10-12-16"/>
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:gravity="left"
+            android:orientation="horizontal">
+
+
+            <Button
+                android:id="@+id/button_menu"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="MENU"
+
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
                 android:text="Inchage: "
                 android:textColor="@color/blue" />
 
@@ -70,64 +121,7 @@
                 android:text="Ronnel Remedios"
                 android:textColor="@color/blue"
                 android:textStyle="normal|bold" />
-        </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
-            android:orientation="horizontal">
-
-            <!--                <ImageView-->
-<!--                    android:layout_width="50dp"-->
-<!--                    android:layout_height="50dp"-->
-<!--                    android:layout_marginLeft="3dp"-->
-<!--                    android:layout_marginBottom="15dp"-->
-<!--                    android:scaleType="fitCenter"-->
-<!--                    android:src="@drawable/ic_student" />-->
-
-<!--                <TextView-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_gravity="bottom"-->
-<!--                    android:text="Students"-->
-<!--                    android:textColor="@color/blue" />-->
-
-
-            <Button
-                android:id="@+id/frame_studentsClass"
-                android:layout_width="103dp"
-                android:layout_height="wrap_content"
-                android:text="Student"
-
-                />
-
-
-            <Button
-                android:id="@+id/frame_examsClass"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:text="exams"
-                />
-
-            <Button
-                android:id="@+id/frame_editClass"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:text="Edit"
-                />
-
-
-            <Button
-                android:id="@+id/frame_deleteClass"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:text="Delete"
-                />
 
 
 

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.ClassesFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:text="STUDENT LIST"
+            android:textSize="30sp"
+            android:fontFamily="@font/font_caprasimo_cegular"
+            android:background="@drawable/background_addclass"
+
+            android:gravity="center"
+            />
+
+        <Button
+            android:id="@+id/add_classButton"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="200dp"
+            android:text="Add Class" />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/student_recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="130dp"
+        android:layout_marginRight="10dp"
+        tools:listitem="@layout/model_student" />
+
+</FrameLayout>

@@ -4,6 +4,7 @@ package com.remedios.eclassrecordteacher.fragment
 
 
 import android.os.Bundle
+import android.provider.SyncStateContract.Constants
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -30,17 +31,7 @@ class ClassesFragment : Fragment() {
     private lateinit var recv:RecyclerView
     private lateinit var userList:ArrayList<UserData>
     private lateinit var userAdapter: UserAdapter
-    private lateinit var deleteBtn:FrameLayout
-
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-
-
-
-
-    }
+    private var menuButton: Button? = null
 
 
     override fun onCreateView(
@@ -57,17 +48,15 @@ class ClassesFragment : Fragment() {
         recv.layoutManager = LinearLayoutManager(context)
         recv.adapter = userAdapter
         addsBtn!!.setOnClickListener { addInfo() }
+        menuButton = binding.root.findViewById(R.id.button_menu)
 
-//        deleteBtn.setOnClickListener {
-//            deleteInfo()
-//        }
 
-//        deleteBtn.setOnClickListener {
-//            val index:Int = Random.nextInt()
-//
-//            userList.removeAt(index)
-//            userAdapter.notifyItemRemoved(index)
-//        }
+
+
+
+
+
+
 
         return binding.root
         }
