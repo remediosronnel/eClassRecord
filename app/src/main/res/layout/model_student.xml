@@ -6,13 +6,13 @@
     android:layout_height="wrap_content">
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="405dp"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingTop="10dp"
         android:layout_marginLeft="3dp"
         android:layout_marginRight="3dp"
         android:background="@drawable/img_background_2"
+        android:orientation="horizontal"
+        android:paddingTop="10dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -40,22 +40,23 @@
                 android:orientation="horizontal">
 
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginBottom="5dp"
-                android:textStyle="normal|bold"
-                android:text="Student Name"
-                android:textColor="@color/black"
-                android:textSize="25sp" />
+                <TextView
+                    android:id="@+id/tv_studentName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:text="Student Name"
+                    android:textColor="@color/black"
+                    android:textSize="25sp"
+                    android:textStyle="normal|bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/black"
                     android:layout_marginLeft="10dp"
-                    android:text="SN:"/>
+                    android:text="SN:"
+                    android:textColor="@color/black" />
 
                 <TextView
                     android:id="@+id/tvStudentNumber"
@@ -64,7 +65,7 @@
                     android:layout_marginLeft="5dp"
                     android:text="12345678910"
                     android:textColor="@color/black" />
-        </LinearLayout>
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -102,7 +103,6 @@
                     android:textColor="@color/black" />
 
 
-
             </LinearLayout>
 
             <LinearLayout
@@ -120,6 +120,7 @@
                     android:orientation="vertical">
 
                     <ImageButton
+                        android:id="@+id/student_profile"
                         android:layout_width="37dp"
                         android:layout_height="50dp"
                         android:layout_marginBottom="20dp"
@@ -134,40 +135,17 @@
 
                 </FrameLayout>
 
-                <FrameLayout
-                    android:id="@+id/frame_attendance"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginTop="10dp"
-                    android:orientation="vertical">
-
-                    <ImageButton
-                        android:layout_width="40dp"
-                        android:layout_height="50dp"
-                        android:layout_marginLeft="4dp"
-                        android:layout_marginBottom="20dp"
-                        android:src="@drawable/ic_attendance" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="bottom"
-                        android:text="Attendance"
-                        android:textColor="@color/blue"
-                        android:textSize="10sp" />
-
-                </FrameLayout>
 
                 <FrameLayout
                     android:id="@+id/frame_exams"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
+                    android:layout_marginLeft="25dp"
                     android:layout_marginTop="10dp"
                     android:orientation="vertical">
 
                     <ImageButton
+                        android:id="@+id/student_exam"
                         android:layout_width="40dp"
                         android:layout_height="50dp"
                         android:layout_marginLeft="4dp"
@@ -184,40 +162,17 @@
 
                 </FrameLayout>
 
-                <FrameLayout
-                    android:id="@+id/frame_oral"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginTop="10dp"
-                    android:orientation="vertical">
-
-                    <ImageButton
-                        android:layout_width="40dp"
-                        android:layout_height="50dp"
-                        android:layout_marginLeft="4dp"
-                        android:layout_marginBottom="20dp"
-                        android:src="@drawable/ic_oral" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="bottom"
-                        android:layout_marginLeft="10dp"
-                        android:text="Oral"
-                        android:textColor="@color/blue" />
-
-                </FrameLayout>
 
                 <FrameLayout
                     android:id="@+id/frame_edit"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
+                    android:layout_marginLeft="25dp"
                     android:layout_marginTop="10dp"
                     android:orientation="vertical">
 
                     <ImageButton
+                        android:id="@+id/student_edit"
                         android:layout_width="40dp"
                         android:layout_height="50dp"
                         android:layout_marginLeft="4dp"
@@ -238,11 +193,12 @@
                     android:id="@+id/frame_delete"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
+                    android:layout_marginLeft="25dp"
                     android:layout_marginTop="10dp"
                     android:orientation="vertical">
 
                     <ImageButton
+                        android:id="@+id/student_delete"
                         android:layout_width="40dp"
                         android:layout_height="50dp"
                         android:layout_marginLeft="4dp"

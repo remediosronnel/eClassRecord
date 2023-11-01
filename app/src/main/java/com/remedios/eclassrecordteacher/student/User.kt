@@ -2,16 +2,26 @@ package com.remedios.eclassrecordteacher.student
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import java.io.Serializable
+import java.util.Date
 
 @Entity
 data class User(
-    var firstName:String = "",
-    var lastName:String = "",
-    var studentNumber:Int = 0,
-    var studentLRN:Int = 0,
-    var studentGender:String = ""
+    var studentName:String = "",
+    var studentLRN:String = "",
+    var birthDate:String = "",
+    var enrolledDate:String = "",
+    var studentGender:String = "",
+    var studentRemarks:String = "",
+    var motherName:String = "",
+    var fatherName:String = "",
+    var studentAddress:String = "",
+    var contactNumber:String = ""
 
 
-) {
-    @PrimaryKey(autoGenerate = true) var id:Int = 0
+
+):Serializable{
+    @PrimaryKey(autoGenerate = true)
+    var id:Int = 0
+
 }

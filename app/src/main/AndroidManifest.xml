@@ -36,8 +36,11 @@
         tools:targetApi="tiramisu">
         <activity
             android:name=".student.AddStudent"
-            android:exported="false"
-            android:theme="@style/Theme.EClassRecordTeacher" />
+            android:exported="false" />
+        <activity
+            android:name=".student.AddStudentInfo"
+            android:exported="false" />
+
         <activity
             android:name=".TeachersProfile"
             android:exported="false"
