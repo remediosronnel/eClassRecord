@@ -40,6 +40,9 @@
         <activity
             android:name=".student.AddStudentInfo"
             android:exported="false" />
+        <activity
+            android:name=".student.StudentProfile"
+            android:exported="false" />
 
         <activity
             android:name=".TeachersProfile"

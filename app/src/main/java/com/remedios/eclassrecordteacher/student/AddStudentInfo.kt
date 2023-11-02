@@ -7,17 +7,19 @@ import androidx.lifecycle.lifecycleScope
 import com.remedios.eclassrecordteacher.databinding.AddStudentInfoBinding
 import kotlinx.coroutines.launch
 
-class AddStudentInfo:AppCompatActivity() {
+@Suppress("DEPRECATION")
+class AddStudentInfo() :AppCompatActivity() {
     private lateinit var binding: AddStudentInfoBinding
-    private var user:User? = null
+    private var user: User? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = AddStudentInfoBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-        user = intent.getSerializableExtra("Data") as User
+
+        user = intent!!.getSerializableExtra("Data") as User?
 
 
-        if (user==null) binding.btnAddOrUpdateStudent.text = "Add Student"
+        if (user==null) {binding.btnAddOrUpdateStudent.text = "Add Student"}
         else {
             binding.btnAddOrUpdateStudent.text = "Update"
             binding.studentName.setText(user?.studentName.toString())
@@ -68,7 +70,11 @@ class AddStudentInfo:AppCompatActivity() {
                 AppDatabase(this@AddStudentInfo).getUserDao().addUser(user)
                 finish()
             }else{
-
+                val u = User(studentName, studentLrn, birthDate, enrollDate,
+                    gender, remarks, motherName, fatherName, address, contactNo)
+                u.id = user?.id ?:0
+                AppDatabase(this@AddStudentInfo).getUserDao().updateUser(u)
+                finish()
             }
         }
     }

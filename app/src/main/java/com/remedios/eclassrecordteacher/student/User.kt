@@ -3,11 +3,11 @@ package com.remedios.eclassrecordteacher.student
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import java.io.Serializable
-import java.util.Date
+
 
 @Entity
 data class User(
-    var studentName:String = "",
+    var studentName: String = "",
     var studentLRN:String = "",
     var birthDate:String = "",
     var enrolledDate:String = "",
@@ -20,7 +20,8 @@ data class User(
 
 
 
-):Serializable{
+): Serializable {
+
     @PrimaryKey(autoGenerate = true)
     var id:Int = 0
 
