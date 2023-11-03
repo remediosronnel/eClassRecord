@@ -33,11 +33,9 @@ import kotlin.system.exitProcess
 
 public class TeachersProfile: AppCompatActivity() {
     private lateinit var binding: ActivityTeachersProfileBinding
-    private lateinit var auth: FirebaseAuth
+
     private var uri: Uri? = null
     private var sImage:String = ""
-    private lateinit var db:DatabaseReference
-    private var storageRef = Firebase.storage
 
 
 
@@ -45,8 +43,7 @@ public class TeachersProfile: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityTeachersProfileBinding.inflate(layoutInflater)
         setContentView(binding.root);
-        auth = Firebase.auth
-        auth.signInAnonymously()
+
 
 
 
@@ -75,19 +72,9 @@ public class TeachersProfile: AppCompatActivity() {
 
 
         if (name.isNotEmpty() && schoolName.isNotEmpty() && districtName.isNotEmpty() && divisionName.isNotEmpty() && sImage?.isNotEmpty() == true) {
-            db = FirebaseDatabase.getInstance().getReference("users")
-            val item = UserModel(name, schoolName, districtName, divisionName, sImage)
-            val databaseReference = FirebaseDatabase.getInstance().reference
-            val id = databaseReference.push().key
-            db.child(id.toString()).setValue(item).addOnCompleteListener {
-                binding.teacherName.text.clear()
-                binding.schoolName.text.clear()
-                binding.districtName.text.clear()
-                binding.divisionName.text.clear()
-                sImage = ""
-            }
 
-            storageImage()
+
+
 
 //
         }
@@ -132,17 +119,7 @@ public class TeachersProfile: AppCompatActivity() {
 
 
         }
-    private fun storageImage(){
-        if (uri != null) {
-            storageRef.getReference("images")
-                .child(System.currentTimeMillis().toString())
-                .putFile(uri!!)
-                .addOnSuccessListener { task ->
-                    task.metadata!!.reference!!.downloadUrl
 
-                }
-        }
-    }
 
 
 }

@@ -62,6 +62,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="25dp"
                     android:hint="Name"
+                    android:layout_marginTop="10dp"
                     android:layout_marginBottom="32dp"
                     app:startIconDrawable="@drawable/ic_profile"
                     >
@@ -134,6 +135,7 @@
                 android:divider="@color/lime"
                 >
             <Button
+                android:id="@+id/btn_teacherProfile"
                 android:layout_width="150dp"
                 android:layout_height="50dp"
                 android:text="SAVE"

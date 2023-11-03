@@ -45,17 +45,17 @@
             android:exported="false" />
 
         <activity
-            android:name=".TeachersProfile"
+            android:name=".MainActivity"
             android:exported="false"
             tools:targetApi="tiramisu" />
         <activity
-            android:name=".MainActivity"
+            android:name=".HomeActivity"
             android:exported="false" />
         <activity
             android:name=".NewActivity"
             android:exported="false" />
         <activity
-            android:name=".HomeActivity"
+            android:name=".TeachersProfile"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
