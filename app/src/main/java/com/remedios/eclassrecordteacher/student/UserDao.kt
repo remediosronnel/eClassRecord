@@ -12,7 +12,7 @@ interface UserDao {
     @Insert
     suspend fun addUser(user: User)
 
-    @Query("SELECT * FROM user ORDER BY id DESC")
+    @Query("SELECT * FROM user ORDER BY id ASC")
     suspend fun getAllUser():List<User>
 
     @Update

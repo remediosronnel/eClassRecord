@@ -71,11 +71,11 @@
 
                 <EditText
                     android:id="@+id/class_name_exam"
-                    android:layout_width="200dp"
+                    android:layout_width="225dp"
                     android:layout_height="50dp"
                     android:background="@color/white"
                     android:layout_marginLeft="5dp"
-                    android:hint="Enter Class Name" />
+                     />
 
             </LinearLayout>
 
@@ -100,7 +100,7 @@
                     android:layout_height="50dp"
                     android:background="@color/white"
                     android:layout_marginStart="5dp"
-                    android:hint="Enter Class Teacher" />
+                    />
 
             </LinearLayout>
 
@@ -150,6 +150,7 @@
                     android:layout_height="50dp"
                     android:background="@color/white"
                     android:layout_marginLeft="5dp"
+                    android:gravity="center"
                     android:hint="MM-DD-YY" />
 
             </LinearLayout>

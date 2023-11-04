@@ -1,4 +1,4 @@
-package com.remedios.eclassrecordteacher.student
+package com.remedios.eclassrecordteacher.exams
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

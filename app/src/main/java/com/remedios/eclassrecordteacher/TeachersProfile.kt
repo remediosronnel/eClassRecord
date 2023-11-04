@@ -6,29 +6,12 @@ import android.graphics.BitmapFactory
 import android.net.Uri
 import android.os.Bundle;
 import android.util.Base64
-import android.view.Menu
-import android.view.MenuItem
 import android.widget.Toast
-import android.window.OnBackInvokedDispatcher
 import androidx.activity.result.ActivityResult
-import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.ReportFragment.Companion.reportFragment
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.auth.ktx.userProfileChangeRequest
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.ktx.Firebase
-import com.google.firebase.storage.FirebaseStorage
-import com.google.firebase.storage.ktx.storage
 import com.remedios.eclassrecordteacher.databinding.ActivityTeachersProfileBinding
-import com.remedios.eclassrecordteacher.db.UserModel
-import kotlinx.coroutines.currentCoroutineContext
-import kotlinx.coroutines.isActive
 import java.io.ByteArrayOutputStream
-import kotlin.system.exitProcess
 
 
 public class TeachersProfile: AppCompatActivity() {
