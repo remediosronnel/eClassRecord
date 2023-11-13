@@ -12,7 +12,7 @@ interface ExamsDao {
     @Insert
     suspend fun addExams(exams: Exams)
 
-    @Query ("SELECT * FROM item_exams ORDER BY id ASC")
+    @Query ("SELECT * FROM exams ORDER BY id ASC")
     suspend fun getAllExams():List<Exams>
 
     @Update

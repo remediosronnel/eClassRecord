@@ -28,17 +28,25 @@ public class TeachersProfile: AppCompatActivity() {
         setContentView(binding.root);
 
 
-
+        val name = binding.teacherName.text.toString()
+        val schoolName = binding.schoolName.text.toString()
+        val districtName = binding.districtName.text.toString()
+        val divisionName = binding.divisionName.text.toString()
 
 
                 binding.profilePic.setOnClickListener {
-
                     insertImage()
 
                 }
                 binding.profileSave.setOnClickListener {
                     insertData()
                     val intent = Intent(this, HomeActivity::class.java)
+
+                    intent.putExtra("name", "Name")
+                    intent.putExtra("schoolName", "School Name")
+                    intent.putExtra("districtName", "District Name")
+                    intent.putExtra("divisionName", "Division Name")
+                    intent.putExtra("image12", R.drawable.backgroundpicture)
                     startActivity(intent)
                     finishAffinity()
 
@@ -57,11 +65,7 @@ public class TeachersProfile: AppCompatActivity() {
         if (name.isNotEmpty() && schoolName.isNotEmpty() && districtName.isNotEmpty() && divisionName.isNotEmpty() && sImage?.isNotEmpty() == true) {
 
 
-
-
-//
         }
-
 
         else{
 

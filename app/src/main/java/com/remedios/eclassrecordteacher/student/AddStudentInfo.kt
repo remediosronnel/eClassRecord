@@ -1,16 +1,21 @@
 package com.remedios.eclassrecordteacher.student
 
 
+
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.remedios.eclassrecordteacher.databinding.AddStudentInfoBinding
 import kotlinx.coroutines.launch
 
-@Suppress("DEPRECATION")
-class AddStudentInfo() :AppCompatActivity() {
+
+
+class AddStudentInfo :AppCompatActivity() {
+
     private lateinit var binding: AddStudentInfoBinding
     private var user: User? = null
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = AddStudentInfoBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
@@ -19,8 +24,12 @@ class AddStudentInfo() :AppCompatActivity() {
         user = intent!!.getSerializableExtra("Data") as User?
 
 
-        if (user==null) {binding.btnAddOrUpdateStudent.text = "Add Student"}
+        if (user==null) {binding.btnAddOrUpdateStudent.text = "Add Student"
+
+        }
+
         else {
+
             binding.btnAddOrUpdateStudent.text = "Update"
             binding.studentName.setText(user?.studentName.toString())
             binding.studentLrn.setText(user?.studentLRN.toString())
@@ -32,8 +41,8 @@ class AddStudentInfo() :AppCompatActivity() {
             binding.fatherName.setText(user?.fatherName.toString())
             binding.studentAddress.setText(user?.studentAddress.toString())
             binding.contactNumber.setText(user?.contactNumber.toString())
-        }
 
+        }
 
 
         binding.btnAddOrUpdateStudent.setOnClickListener { addUser() }
@@ -53,6 +62,7 @@ class AddStudentInfo() :AppCompatActivity() {
         val address = binding.studentAddress.text.toString()
         val contactNo = binding.contactNumber.text.toString()
 
+
         lifecycleScope.launch {
             if (user == null) {
                 val user = User(
@@ -65,10 +75,11 @@ class AddStudentInfo() :AppCompatActivity() {
                     motherName = motherName,
                     fatherName = fatherName,
                     studentAddress = address,
-                    contactNumber = contactNo
+                    contactNumber = contactNo,
                 )
                 AppDatabase(this@AddStudentInfo).getUserDao().addUser(user)
                 finish()
+
             }else{
                 val u = User(studentName, studentLrn, birthDate, enrollDate,
                     gender, remarks, motherName, fatherName, address, contactNo)
@@ -78,5 +89,6 @@ class AddStudentInfo() :AppCompatActivity() {
             }
         }
     }
+
 }
 

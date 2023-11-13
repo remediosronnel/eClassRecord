@@ -17,6 +17,7 @@ import com.remedios.eclassrecordteacher.classes.ClassAdapter
 import com.remedios.eclassrecordteacher.classes.ClassData
 import com.remedios.eclassrecordteacher.classes.ClassDatabase
 import com.remedios.eclassrecordteacher.databinding.ListClassItemBinding
+import com.remedios.eclassrecordteacher.exams.StudentExam
 import com.remedios.eclassrecordteacher.student.AddStudent
 import kotlinx.coroutines.launch
 
@@ -91,7 +92,8 @@ class ClassesFragment : Fragment() {
                         startActivity(intent)
                     }
                     mAdapter?.setOnActionExamListener {
-
+                        val intent = Intent(context, StudentExam::class.java)
+                        startActivity(intent)
                     }
 
             }

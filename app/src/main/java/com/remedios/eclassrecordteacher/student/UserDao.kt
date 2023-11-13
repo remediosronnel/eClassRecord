@@ -5,6 +5,8 @@ import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Update
+import androidx.sqlite.db.SupportSQLiteQuery
+
 
 @Dao
 interface UserDao {
@@ -12,7 +14,7 @@ interface UserDao {
     @Insert
     suspend fun addUser(user: User)
 
-    @Query("SELECT * FROM user ORDER BY id ASC")
+    @Query("SELECT * FROM user")
     suspend fun getAllUser():List<User>
 
     @Update
@@ -20,4 +22,9 @@ interface UserDao {
 
     @Delete
     suspend fun deleteUser(user: User)
+
+//    @Query("SELECT * FROM user JOIN teacherUser ON user.id = teacherUser.id")
+//    suspend fun getAllStudents():Map<User, List<TeacherUser>>
+//    fun insertDataRawFormat(query: SupportSQLiteQuery): Boolean?
+
 }

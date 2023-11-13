@@ -6,15 +6,20 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.remedios.eclassrecordteacher.R
 import com.remedios.eclassrecordteacher.databinding.ListStudentItemBinding
 import com.remedios.eclassrecordteacher.exams.StudentExam
+import com.remedios.eclassrecordteacher.fragment.ClassesFragment
 
 import kotlinx.coroutines.launch
+
 
 
 class AddStudent: AppCompatActivity() {
     private lateinit var binding: ListStudentItemBinding
     private var mAdapter:UserAdapter? = null
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ListStudentItemBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
@@ -23,6 +28,17 @@ class AddStudent: AppCompatActivity() {
         binding.addStudentButton.setOnClickListener {
             val intent = Intent(this, AddStudentInfo::class.java)
             startActivity(intent)
+        }
+
+        binding.backStudentlist.setOnClickListener {
+            val fragment = ClassesFragment()
+            val fragmentManager = supportFragmentManager
+            val fragmentTransaction = fragmentManager.beginTransaction()
+            if (fragment != null) {
+                fragmentTransaction.replace(R.id.nav_view, fragment)
+            }
+            fragmentTransaction.addToBackStack("ClassesFragment")
+            fragmentTransaction.commit()
 
         }
     }
@@ -76,8 +92,6 @@ class AddStudent: AppCompatActivity() {
                         val intent = Intent(this@AddStudent, StudentExam::class.java)
                         startActivity(intent)
                     }
-
-
 
             }
 

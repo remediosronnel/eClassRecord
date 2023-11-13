@@ -1,6 +1,7 @@
 package com.remedios.eclassrecordteacher.student
 
 
+
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,6 +18,7 @@ class UserAdapter : RecyclerView.Adapter<UserAdapter.UserViewHolder>() {
     private var actionDelete:((User) -> Unit)? = null
     private var actionProfile:((User) -> Unit)? = null
     private var actionExam:((User) -> Unit)? = null
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserViewHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.model_student, parent, false)
@@ -32,11 +34,11 @@ class UserAdapter : RecyclerView.Adapter<UserAdapter.UserViewHolder>() {
         holder.studentLRN.text = user.studentLRN
 
 
+
         holder.actionEdit.setOnClickListener{actionEdit?.invoke(user)}
         holder.actionDelete.setOnClickListener{actionDelete?.invoke(user)}
         holder.actionProfile.setOnClickListener{actionProfile?.invoke(user)}
         holder.actionExam.setOnClickListener{actionExam?.invoke(user)}
-
 
 
     }
@@ -66,14 +68,20 @@ class UserAdapter : RecyclerView.Adapter<UserAdapter.UserViewHolder>() {
 
 
 
+
+
     class UserViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         val studentName = itemView.findViewById<TextView>(R.id.tv_studentName)
         val studentLRN = itemView.findViewById<TextView>(R.id.tv_studentLRN)
         val studentGender = itemView.findViewById<TextView>(R.id.tvGender)
         val studentNumber = itemView.findViewById<TextView>(R.id.tvStudentNumber)
+        var studentImage:ImageView = itemView.findViewById(R.id.iv_studentImage)
+
+        var actionUpLoad:ImageView = itemView.findViewById(R.id.iv_studentImage)
         val actionDelete:ImageView = itemView.findViewById(R.id.student_delete)
         val actionEdit:ImageView = itemView.findViewById(R.id.student_edit)
         val actionProfile:ImageView = itemView.findViewById(R.id.student_profile)
         val actionExam:ImageView = itemView.findViewById(R.id.student_exam)
+
     }
 }

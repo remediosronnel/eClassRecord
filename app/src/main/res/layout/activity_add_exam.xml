@@ -70,7 +70,7 @@
                     android:textSize="20sp" />
 
                 <EditText
-                    android:id="@+id/class_name_exam"
+                    android:id="@+id/add_class_name"
                     android:layout_width="225dp"
                     android:layout_height="50dp"
                     android:background="@color/white"
@@ -95,7 +95,7 @@
                     android:textSize="20sp" />
 
                 <EditText
-                    android:id="@+id/exam_name"
+                    android:id="@+id/add_exam_name"
                     android:layout_width="221dp"
                     android:layout_height="50dp"
                     android:background="@color/white"
@@ -120,7 +120,7 @@
                     android:textSize="20sp" />
 
                 <EditText
-                    android:id="@+id/number_items"
+                    android:id="@+id/add_exam_items"
                     android:layout_width="221dp"
                     android:layout_height="50dp"
                     android:background="@color/white"
@@ -145,7 +145,7 @@
                     android:textSize="20sp" />
 
                 <EditText
-                    android:id="@+id/date_exam"
+                    android:id="@+id/add_exam_date"
                     android:layout_width="221dp"
                     android:layout_height="50dp"
                     android:background="@color/white"

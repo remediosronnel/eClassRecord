@@ -20,4 +20,6 @@ interface TeacherDao {
     @Delete
     suspend fun delete(teacherUser: TeacherUser)
 
+
+
 }

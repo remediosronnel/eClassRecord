@@ -9,7 +9,7 @@ import com.remedios.eclassrecordteacher.databinding.StudentProfileBinding
 @Suppress("DEPRECATION")
 class StudentProfile:AppCompatActivity() {
     lateinit var binding: StudentProfileBinding
-    private var user: User? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = StudentProfileBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)

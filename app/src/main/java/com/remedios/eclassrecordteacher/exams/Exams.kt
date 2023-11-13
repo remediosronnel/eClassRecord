@@ -4,12 +4,12 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import java.io.Serializable
 
-@Entity(tableName = "item_exams")
+@Entity
 data class Exams(
-    val name:String = "",
-    val schoolName:String = "",
-    val districtName:String = "",
-    val divisionName:String = "",
+    val className:String = "",
+    val examName:String = "",
+    val numberItem:String = "",
+    val examDate:String = "",
 
 ):Serializable{
 
