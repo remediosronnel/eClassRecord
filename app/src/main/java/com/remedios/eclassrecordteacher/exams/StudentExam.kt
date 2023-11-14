@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.remedios.eclassrecordteacher.databinding.ListExamItemBinding
+import com.remedios.eclassrecordteacher.marks.MarksActivity
 import kotlinx.coroutines.launch
 
 
@@ -62,7 +63,11 @@ class StudentExam:AppCompatActivity() {
                         val dialog = builder.create()
                         dialog.show()
                     }
+                    mAdapter?.setOnActionMarkListener {
+                        val intent = Intent(this@StudentExam, MarksActivity::class.java)
+                        startActivity(intent)
 
+                    }
             }
 
 

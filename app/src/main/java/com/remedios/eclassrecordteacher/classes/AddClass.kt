@@ -1,19 +1,14 @@
 package com.remedios.eclassrecordteacher.classes
 
-import android.app.Activity
-import android.content.Intent
+
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.FragmentManager
-import androidx.lifecycle.ReportFragment.Companion.reportFragment
 import androidx.lifecycle.lifecycleScope
-import com.google.firebase.database.connection.ConnectionContext
 import com.remedios.eclassrecordteacher.R
 import com.remedios.eclassrecordteacher.databinding.AddClassItemBinding
 import com.remedios.eclassrecordteacher.fragment.ClassesFragment
-import com.remedios.eclassrecordteacher.fragment.HomeFragment
 import kotlinx.coroutines.launch
-import java.util.Stack
+
 
 class AddClass: AppCompatActivity() {
     private lateinit var binding:AddClassItemBinding
@@ -73,7 +68,5 @@ class AddClass: AppCompatActivity() {
                 finish()
             }
         }
-
     }
-
 }

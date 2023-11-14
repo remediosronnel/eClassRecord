@@ -34,6 +34,13 @@
         android:theme="@style/Theme.EClassRecordTeacher"
         android:usesCleartextTraffic="true"
         tools:targetApi="tiramisu">
+
+        <activity
+            android:name=".marks.MarksActivity"
+            android:exported="false" />
+        <activity
+            android:name=".marks.AddMarks"
+            android:exported="false" />
         <activity
             android:name=".exportdata.XlsExportActivity"
             android:exported="false" />
@@ -56,7 +63,7 @@
             android:name=".student.StudentProfile"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".HomeActivity"
             android:exported="false"
             tools:targetApi="tiramisu" />
         <activity
@@ -65,10 +72,8 @@
         <activity
             android:name=".NewActivity"
             android:exported="false" />
-
-
         <activity
-            android:name=".HomeActivity"
+            android:name=".MainActivity"
             android:enableOnBackInvokedCallback="true"
             android:exported="true">
             <intent-filter>

@@ -5,11 +5,11 @@
     android:layout_height="wrap_content">
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="414dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="5dp"
-        android:orientation="horizontal"
         android:background="@drawable/img_background_2"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/guideline3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,15 +20,15 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
-            android:layout_marginRight="10dp"
+            android:layout_marginRight="5dp"
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/exam_name"
+                android:id="@+id/marks_exam_name"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
-                android:textColor="@color/black"
                 android:text="EXAM NAME"
+                android:textColor="@color/black"
                 android:textSize="30sp" />
 
             <LinearLayout
@@ -40,43 +40,67 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/black"
-                    android:text="Date: " />
+                    android:text="Date: "
+                    android:textColor="@color/black" />
 
                 <TextView
                     android:id="@+id/date_exam"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="5dp"
-                    android:textColor="@color/black"
-                    android:text="MM-DD-YYYY" />
+                    android:text="MM-DD-YYYY"
+                    android:textColor="@color/black" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
-                    android:textColor="@color/black"
-                    android:text="No. Items: " />
+                    android:text="No. Items: "
+                    android:textColor="@color/black" />
 
                 <TextView
                     android:id="@+id/no_items"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
-                    android:textColor="@color/black"
-                    android:text="50" />
+                    android:text="50"
+                    android:textColor="@color/black" />
 
 
             </LinearLayout>
 
 
         </LinearLayout>
+        <FrameLayout
+            android:id="@+id/frame_mark"
+            android:layout_width="wrap_content"
+            android:layout_height="65dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp">
 
+            <ImageView
+                android:id="@+id/iv_mark"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_exam" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|center"
+                android:gravity="bottom"
+                android:text="Mark"
+                android:textColor="@color/black" />
+
+        </FrameLayout>
         <FrameLayout
             android:id="@+id/frame_editExamModel"
             android:layout_width="wrap_content"
             android:layout_height="65dp"
-            android:layout_marginLeft="25dp"
+            android:layout_marginLeft="5dp"
             android:layout_marginTop="10dp">
 
             <ImageView
@@ -93,16 +117,16 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom|center"
                 android:gravity="bottom"
-                android:textColor="@color/black"
-                android:text="Edit" />
+                android:text="Edit"
+                android:textColor="@color/black" />
 
         </FrameLayout>
 
         <FrameLayout
             android:id="@+id/frame_delete"
-            android:layout_width="wrap_content"
+            android:layout_width="60dp"
             android:layout_height="65dp"
-            android:layout_marginLeft="25dp"
+            android:layout_marginLeft="5dp"
             android:layout_marginTop="10dp"
             android:layout_marginRight="25dp">
 
@@ -110,16 +134,16 @@
                 android:id="@+id/exam_delete"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_gravity="center_vertical|center_horizontal"
+                android:layout_gravity="center_horizontal|center_vertical"
                 android:layout_marginBottom="10dp"
                 android:scaleType="fitCenter"
                 android:src="@drawable/ic_delete" />
 
             <TextView
-                android:layout_width="45dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom|center"
-                android:gravity="center"
+                android:gravity="bottom"
                 android:text="Delete"
                 android:textColor="@color/black" />
 

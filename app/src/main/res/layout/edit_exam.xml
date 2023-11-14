@@ -1,40 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
 
     <LinearLayout
-        android:background="@drawable/img_background_2"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/img_background_2"
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/guideline4"
         app:layout_constraintEnd_toEndOf="parent"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:layout_width="75dp"
-            android:layout_height="75dp"
-            android:baseline="@dimen/material_emphasis_high_type"
-            android:outlineSpotShadowColor="@color/material_dynamic_neutral100"
-            android:src="@drawable/ic_profile" />
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="220dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/student_name"
-                android:textColor="@color/black"
+                android:id="@+id/mark_student_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Student Name"
+                android:textColor="@color/black"
                 android:textSize="20sp" />
 
             <LinearLayout
@@ -46,33 +40,35 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/black"
-                    android:text="Stud ID: " />
+                    android:text="Stud ID: "
+                    android:textColor="@color/black" />
 
                 <TextView
-                    android:id="@+id/student_id"
+                    android:id="@+id/mark_student_id"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
-                    android:textColor="@color/black"
-                    android:text="1" />
+                    android:text="1"
+                    android:textColor="@color/black" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:textColor="@color/black"
-                    android:text="LRN: " />
+                    android:text=" LRN: "
+                    android:textColor="@color/black" />
 
                 <TextView
-                    android:id="@+id/student_lrn"
+                    android:id="@+id/mark_student_lrn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
-                    android:textColor="@color/black"
-                    android:text="000000000000" />
+                    android:text="000000000000"
+                    android:textColor="@color/black" />
 
             </LinearLayout>
+
+
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -83,28 +79,40 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/black"
-                    android:text="Gender: " />
+                    android:text="Gender: "
+                    android:textColor="@color/black" />
 
                 <TextView
+                    android:id="@+id/mark_student_gender"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/black"
-                    android:text="Male" />
+                    android:text="Male"
+                    android:textColor="@color/black" />
 
 
             </LinearLayout>
 
         </LinearLayout>
 
+        <ImageView
+            android:id="@+id/score_delete"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_delete"
+            android:textColor="@color/black" />
+
         <FrameLayout
             android:id="@+id/frame_present"
             android:layout_width="wrap_content"
             android:layout_height="75dp"
-            android:visibility="gone"
-            >
+            android:visibility="gone">
 
             <ImageView
+
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_marginLeft="5dp"
@@ -120,14 +128,15 @@
                 android:text="Present" />
 
         </FrameLayout>
+
         <FrameLayout
             android:id="@+id/frame_absent"
             android:layout_width="wrap_content"
             android:layout_height="75dp"
-            android:visibility="gone"
-            >
+            android:visibility="gone">
 
             <ImageView
+                android:id="@+id/image_absent"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_marginLeft="5dp"
@@ -143,14 +152,15 @@
                 android:text="Absent" />
 
         </FrameLayout>
+
         <FrameLayout
             android:id="@+id/frame_excuse"
             android:layout_width="wrap_content"
             android:layout_height="75dp"
-            android:visibility="visible"
-            >
+            android:visibility="visible">
 
             <ImageView
+                android:id="@+id/image_excuse"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_marginLeft="5dp"
@@ -159,27 +169,29 @@
                 android:src="@drawable/ic_excuse" />
 
             <TextView
+                android:id="@+id/text_excuse"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom|center_horizontal|center_vertical"
                 android:gravity="bottom"
-                android:textColor="@color/black"
-                android:text="Excuse" />
+                android:text="Excuse"
+                android:textColor="@color/black" />
 
         </FrameLayout>
 
         <FrameLayout
+            android:id="@+id/frame_score"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
             <TextView
-                android:id="@+id/exam_score"
+                android:id="@+id/mark_exam_score"
                 android:layout_width="60dp"
                 android:layout_height="75dp"
                 android:layout_gravity="center"
-                android:textColor="@color/black"
                 android:gravity="center_horizontal|center_vertical"
                 android:text="00"
+                android:textColor="@color/black"
                 android:textSize="35dp"
                 android:textStyle="bold|normal" />
 
@@ -195,4 +207,4 @@
         app:layout_constraintGuide_begin="89dp" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

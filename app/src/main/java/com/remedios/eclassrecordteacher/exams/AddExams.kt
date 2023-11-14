@@ -3,9 +3,9 @@ package com.remedios.eclassrecordteacher.exams
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
-import com.remedios.eclassrecordteacher.classes.ClassData
 import com.remedios.eclassrecordteacher.databinding.ActivityAddExamBinding
 import kotlinx.coroutines.launch
+
 
 class AddExams : AppCompatActivity() {
     private lateinit var binding:ActivityAddExamBinding

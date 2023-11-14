@@ -17,6 +17,8 @@ class ExamAdapter: RecyclerView.Adapter<ExamAdapter.ExamViewHolder>() {
     private var list = mutableListOf<Exams>()
     private var actionEdit: ((Exams) -> Unit)? = null
     private var actionDelete: ((Exams) -> Unit)? = null
+    private var actionMark: ((Exams) -> Unit)? = null
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ExamViewHolder {
             val view = LayoutInflater.from(parent.context)
@@ -37,6 +39,7 @@ class ExamAdapter: RecyclerView.Adapter<ExamAdapter.ExamViewHolder>() {
 
         holder.actionEdit.setOnClickListener{actionEdit?.invoke(exam)}
         holder.actionDelete.setOnClickListener{actionDelete?.invoke(exam)}
+        holder.actionMark.setOnClickListener { actionMark?.invoke(exam) }
     }
 
     fun setData(data:List<Exams>){
@@ -45,6 +48,10 @@ class ExamAdapter: RecyclerView.Adapter<ExamAdapter.ExamViewHolder>() {
             addAll(data)
         }
         notifyDataSetChanged()
+    }
+
+    fun setOnActionMarkListener(callback: (Exams) -> Unit){
+        this.actionMark = callback
     }
 
     fun setOnActionEditListener(callback: (Exams) -> Unit){
@@ -56,9 +63,11 @@ class ExamAdapter: RecyclerView.Adapter<ExamAdapter.ExamViewHolder>() {
 
     class ExamViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
 
-        val examName:TextView = itemView.findViewById(R.id.exam_name)
+        val examName:TextView = itemView.findViewById(R.id.marks_exam_name)
         val examItems:TextView = itemView.findViewById(R.id.no_items)
         val examDate:TextView = itemView.findViewById(R.id.date_exam)
+
+        val actionMark:ImageView = itemView.findViewById(R.id.iv_mark)
         val actionEdit:ImageView = itemView.findViewById(R.id.exam_edit)
         val actionDelete:ImageView = itemView.findViewById(R.id.exam_delete)
 

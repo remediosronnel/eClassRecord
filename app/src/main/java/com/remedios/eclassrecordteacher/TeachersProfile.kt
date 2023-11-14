@@ -28,10 +28,10 @@ public class TeachersProfile: AppCompatActivity() {
         setContentView(binding.root);
 
 
-        val name = binding.teacherName.text.toString()
-        val schoolName = binding.schoolName.text.toString()
-        val districtName = binding.districtName.text.toString()
-        val divisionName = binding.divisionName.text.toString()
+                val name = binding.teacherName.text.toString()
+                val schoolName = binding.schoolName.text.toString()
+                val districtName = binding.districtName.text.toString()
+                val divisionName = binding.divisionName.text.toString()
 
 
                 binding.profilePic.setOnClickListener {

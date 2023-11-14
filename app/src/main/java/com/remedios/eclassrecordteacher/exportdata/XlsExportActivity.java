@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.remedios.eclassrecordteacher.databinding.ActivityDataExportBinding;
@@ -41,6 +42,8 @@ public class XlsExportActivity extends AppCompatActivity implements ExportInterf
             var jsonArray = gson.toJsonTree(student).getAsJsonArray();
             String[] titles = new String[]{"Name", "LRN", "Birthdate", "Enrolment","Gender", "Remarks", "Mother Name", "Father Name", "Address", "Contact Number"};
             String[] indexName = new String[]{"studentName", "studentLRN", "birthDate", "enrolledDate", "studentGender", "studentRemarks", "motherName", "fatherName", "studentAddress", "contactNumber" };
+
+            Toast.makeText(getApplicationContext(), "Exported Data", Toast.LENGTH_SHORT).show();
 
             HashMap<String, String> otherValue = new HashMap<>();
             otherValue.put("Record", "Student Record");
